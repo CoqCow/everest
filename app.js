@@ -54,5 +54,6 @@ App({
   globalData: {
     userInfo: null,
     token:null
-  }
+  },
+  globalReqUrl: 'http://127.0.0.1:1818/superman', //本地
 })
