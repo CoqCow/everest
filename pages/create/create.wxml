@@ -1,22 +1,19 @@
 <form bindsubmit="onSubmit" bindreset="">
-
-    <view class='title'><input name="title" placeholder-class="placeholder" placeholder="输入计划标题" />
-    </view>
-    <view>
-     <image class="card-avatar" src="/images/you.jpg"></image>
-     <text class="card-name">用户名：哈喽</text>
-    </view>
-    <text style="font-size:26rpx;color:#8999a5">创建时间：2019-08-01</text>
-  <view>
-    <view>
-        <textarea class='text' placeholder-class="placeholder"  name="content" focus="{{focus}}" value="{{item.value.content}}" placeholder="点击添加文本" />
-    </view>
-    <view><text>计划类型:</text></view>
-    <text>预计完成时间：</text>
-    <view class='bottom'>
-        <button formType="submit" class='btn success'>发布</button>
-        <button form-type="detele" class='btn del'>返回</button>
-    </view>
+  <view class='title'>
+    <input name="title" placeholder-class="placeholder" placeholder="输入计划标题" />
   </view>
-
+  <view>
+    <image class="card-avatar" src="/images/you.jpg"></image>
+    <text class="card-name">用户名：哈喽</text>
+  </view>
+  <text style="font-size:26rpx;color:#8999a5">创建时间：2019-08-01</text>
+  <view>
+    <textarea class='text' placeholder-class="placeholder"  name="content" focus="{{focus}}" value="{{item.value.content}}" placeholder="点击添加文本" />
+  </view>
+  <view><text>计划类型:</text></view>
+  <text>预计完成时间：</text>
+  <view class='bottom'>
+      <button formType="submit" class='btn success'>发布</button>
+      <button form-type="detele" class='btn del'>返回</button>
+    </view>
 </form>

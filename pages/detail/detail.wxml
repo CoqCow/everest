@@ -1,41 +1,34 @@
 <view>
   <view class="top-container flex-row">
-    <view>
-    <text class="topic">计划标题</text>
-    </view>
+    <view><text class="topic">计划标题</text></view>
     <image class="card-avatar" src="/images/you.jpg"></image>                 <text class="card-name">哈喽</text>
     <button size="mini" type="primary">完成状态按钮</button>
-    <view class="user-container">
+    <view>
       <text class="card-time">发布时间：2019-07-30</text>
     </view>
   </view>
-  <view class="book-intro" >
-        <view class="intro-header"><text>计划详情：</text></view>
-        <text class="intro-content">的呢副本里覅放任不管工会任务呢人部分不容易我发单号为广东部分人认可u发表v日服改变突然被人给后人非</text>
+  <view class="plan-intro" >
+    <view class="intro-header"><text>计划详情：</text></view>
+    <text class="intro-content">的呢副本里覅放任不管工会任务呢人部分不容易我发单号为广东部分人认可u发表v日服改变突然被</text>
+  </view>
+  <view class="plan-meta">
+    <view class="meta-info">
+      <text class="user-image">围观人头像</text>
+      <text class="other-meta">已有11人围观</text>
     </view>
-    <view class="book-meta">
-        <view class="meta-info">
-            <text class="book-title">围观人头像</text>
-            
-            <text class="other-meta">已有11人围观</text>
-            
-        </view>
-        <view class="range">
-            <text class="score">围观</text>
-            
-        </view>
+    <view class="range">
+      <text class="score">围观</text>
     </view>
-    <view class="book-meta">
-        <view class="meta-info">
-            <text class="book-title">点赞人头像</text>
-            
-            <text class="other-meta">已有11人点赞</text>
-            
-        </view>
-        <view class="range">
-            <text class="score">👍</text>
-        </view>
+  </view>
+  <view class="plan-meta">
+    <view class="meta-info">
+      <text class="user-image">点赞人头像</text>
+      <text class="other-meta">已有11人点赞</text>
     </view>
-    <button>return</button>
+    <view class="range">
+      <text class="score">👍</text>
+    </view>
+  </view>
+  <button>return</button>
 </view>
 
