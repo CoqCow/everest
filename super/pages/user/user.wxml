@@ -1,0 +1,52 @@
+<view>
+  <view class="top-container flex-row">
+      <image class="card-avatar" src="/images/you.jpg"></image>
+      <text class="card-name">哈喽</text>
+      <image class="card-add" src="/images/add.png" bindtap="created"></image>
+      <view class="user-container">
+        <text class="card-time">用户ID：12345</text>
+      </view>
+  </view>
+  <view class="workbench">
+    <text class="title">我的计划</text>
+    <view class="list">
+      <view class="items">
+        <image src="../../images/user-wait.png"></image>
+        <text>待发布</text>
+      </view>
+      <view class="items">
+        <image src="../../images/user-going.png"></image>
+        <text>进行中</text>
+      </view>
+      <view class="items">
+        <image src="../../images/user-end.png"></image>
+        <text>已完成</text>
+      </view>
+      <view class="items">
+        <image src="../../images/user-fail.png"></image>
+        <text>未完成</text>
+      </view>
+    </view>
+  </view>
+  <view class="workbench">
+    <text class="title">创建计划</text>
+    <view class="list">
+      <view class="items">
+        <image src="../../images/user-private.png" ></image>
+        <text>私密计划</text>
+      </view>
+      <view class="items">
+        <image src="../../images/user-public.png" ></image>
+        <text>公开计划</text>
+      </view>
+      <view class="items">
+        <image src="../../images/user-good.png" ></image>
+        <text>我的点赞</text>
+      </view>
+      <view class="items">
+        <image src="../../images/user-pk.png" ></image>
+        <text>我的挑战</text>
+      </view>
+    </view>
+  </view>
+</view>

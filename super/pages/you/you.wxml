@@ -1,0 +1,21 @@
+<scroll-view scroll-y="true" bindscrolltolower="scrollToLower" class="timeline">
+  <view class="square-container" >
+    <view class="top-container flex-row">
+      <image class="card-avatar" src="/images/you.jpg"></image>
+      <text class="card-name">哈喽</text>               
+      <view class="date-container">
+        <text class="card-time">2019-07-30</text>
+      </view>
+    </view>
+    <view class="middle-container flex-column">
+      <text class="message-text" bindtap="details">每日计划，每周计划，每月计划，督促自己按时完成计划。</text>
+    </view>
+    <view class="bottom-container">
+      <view class="bottom-tool ">
+        <text class="bottom-tool-text">围观：20 </text>
+        <text class="bottom-tool-text">点赞：14 </text>
+        <text class="bottom-tool-text">挑战：14 </text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
