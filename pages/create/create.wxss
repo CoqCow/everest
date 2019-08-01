@@ -10,7 +10,7 @@
 .card-avatar {
   width: 60rpx;
   height: 60rpx;
-  border-radius: 10rpx;
+  border-radius:100%;
   margin-right: 12rpx
 }
 .card-name {

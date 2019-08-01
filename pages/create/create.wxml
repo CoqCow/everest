@@ -10,8 +10,15 @@
   <view>
     <textarea class='text' placeholder-class="placeholder"  name="content" focus="{{focus}}" value="{{item.value.content}}" placeholder="点击添加文本" />
   </view>
-  <view><text>计划类型:</text></view>
-  <text>预计完成时间：</text>
+  <view>
+    <text>计划允许可见：</text>
+    <switch checked></switch>
+  </view>
+  <picker mode="date" value="{{date}}" start="2019-08-01" end="2020-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      预计完成时间: {{date}}
+    </view>
+  </picker>
   <view class='bottom'>
       <button formType="submit" class='btn success'>发布</button>
       <button form-type="detele" class='btn del'>返回</button>

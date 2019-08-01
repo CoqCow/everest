@@ -19,7 +19,7 @@
 .card-avatar {
   width: 80rpx;
   height: 80rpx;
-  border-radius: 8rpx;
+  border-radius:100%;
   margin-right: 12rpx
 }
 .card-time {
