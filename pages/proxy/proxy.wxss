@@ -1,0 +1,24 @@
+/* pages/memberStrategy/memberStrategy.wxss */
+.agreement{
+    padding: 32rpx;
+    box-sizing: border-box;
+}
+.h1{
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #333;
+    line-height:48rpx;
+}
+.h2{
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+    line-height:44rpx;
+    margin: 34rpx 0;
+}
+.text{
+    color: #666;
+    font-size: 28rpx;
+    line-height:48rpx;
+
+}
