@@ -9,6 +9,11 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  ff:function(){
+    wx.reLaunch({
+      url: '/pages/square/square',
+    })
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({

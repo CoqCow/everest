@@ -8,7 +8,7 @@
       </view>
     </view>
     <view class="middle-container flex-column">
-      <text class="message-text" bindtap="details">每日计划，每周计划，每月计划，督促自己按时完成计划。</text>
+      <text class="message-text" bindtap="details" bindtap="details2">每日计划，每周计划，每月计划，督促自己按时完成计划。</text>
     </view>
     <view class="bottom-container">
       <view class="bottom-tool ">

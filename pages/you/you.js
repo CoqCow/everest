@@ -5,6 +5,11 @@ Page({
   data: {
     logs: []
   },
+  details2:function(){
+    wx.navigateTo({
+      url: '/pages/detail/detail',
+    })
+  },
   onLoad: function () {
     this.setData({
       logs: (wx.getStorageSync('logs') || []).map(log => {
