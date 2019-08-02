@@ -17,8 +17,8 @@
     "selectedColor": "#00bfff",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
-    "list": [
-      {
+     "list": [
+     {
         "text": "计划广场",
         "pagePath": "pages/square/square",
         "iconPath": "images/iconfont-list.png",
