@@ -2,13 +2,14 @@
 <view class="container">
   <view class="userinfo">
     <image class="userinfo-avatar" src="/images/logo.png"  bindtap="ff"></image>
-    <text class="userinfo-nickname">YOU计划小程序是计划制订、分享及挑战平台</text>
-    <text class="userinfo-nickname">YOU，是年轻(Young)的你</text>
-    <text class="userinfo-nickname">是杰出(Outstanding)的你</text>
-    <text class="userinfo-nickname">更是独一无二(Unique)的你</text>
-    <text class="userinfo-nickname">更重要的是</text>
-    <text class="userinfo-nickname">我们坚信</text>
-    <text class="userinfo-nickname">You are You等生！</text>
+    <text >YOU计划是计划制订、分享及挑战平台</text>
+    <text >YOU，是年轻(Young)的你</text>
+    <text >是杰出(Outstanding)的你</text>
+    <text >更是独一无二(Unique)的你</text>
+    <text >更重要的是</text>
+    <text >我们坚信</text>
+    <text >You are You等生！</text>
+    <text >You 秀！</text>
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="tosquare"> 加入YOU计划 </button>
     <text class="tip">温馨提示：点击Logo进入计划广场</text>
   </view>
