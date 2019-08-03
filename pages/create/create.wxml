@@ -6,7 +6,7 @@
     <image class="card-avatar" src="{{userInfo.avatarUrl}}"></image>
     <text class="card-name">用户名：{{userInfo.nickName}}</text>
   </view>
-  <text style="font-size:26rpx;color:#8999a5">创建时间：2019-08-01</text>
+  <text style="font-size:26rpx;color:#8999a5">创建时间：{{TIME}}</text>
   <view>
     <textarea class='text' placeholder-class="placeholder"  name="content" focus="{{focus}}" value="{{item.value.content}}" placeholder="点击添加文本" />
   </view>

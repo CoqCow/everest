@@ -1,4 +1,5 @@
 var app = getApp();
+var util=require("../../utils/util.js")
 Page({
   data: {
     userInfo: {},
@@ -17,9 +18,11 @@ Page({
   },
   //获取用户昵称及头像
   onLoad: function () {
+    var TIME = util.formatTime(new Date());
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
+        TIME,
         hasUserInfo: true
       })
     } else if (this.data.canIUse) {
