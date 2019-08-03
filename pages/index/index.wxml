@@ -10,7 +10,8 @@
     <text >我们坚信</text>
     <text >You are You等生！</text>
     <text >You 秀！</text>
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="tosquare"> 加入YOU计划 </button>
-    <text class="tip">温馨提示：点击Logo进入计划广场</text>
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        授权登录
+    </button>
   </view>
 </view>

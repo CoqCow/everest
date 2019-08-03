@@ -18,7 +18,7 @@
   width: 125rpx;
   height: 125rpx;
   border-radius: 8rpx;
-  margin-left: 390rpx
+  margin-left: 310rpx
 }
 .card-time {
   font-size: 26rpx;
@@ -57,4 +57,28 @@
   display: block;
   text-align: center;
   margin-top: 10rpx;
+}
+
+.g-bda-userinfo {
+  padding-top: 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+  margin-bottom: 2rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.i-header{
+  height: 350rpx;
+   background-color: #3891f8;   
+   text-align: center;
+}
+.userinfo-nickname{
+  color: #fff;
 }

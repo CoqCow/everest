@@ -45,13 +45,12 @@ App({
          // that.userInfo = res.data.user;
           //that.token = res.data.token;
         // 获取用户信息
-
+      
         wx.redirectTo({
             url: '/pages/square/square'
           }),
           console.log("success");
        // wx.setStorageSync('globaluserInfo', res.data)
-       // console.log('缓存数据', wx.getStorageSync('globaluserInfo'))
        // console.log(res, that, '用户接口请求')
         return res.data
       },

@@ -132,7 +132,7 @@ Page({
     }
     else {
       wx.request({
-        url: reqfile,
+        url: `${this.globalReqUrl}/user/green/getUserInfo`,
         header: {
           'content-type': 'application/json'
         },
