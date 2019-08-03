@@ -7,17 +7,21 @@
     font-size: 38rpx;
     border-bottom: 1px solid #f5f5f5;
 }
+.card{
+  margin: 5rpx;
+}
 .card-avatar {
   width: 60rpx;
   height: 60rpx;
   border-radius:100%;
-  margin-right: 12rpx
+  margin-right: 12rpx;
 }
 .card-name {
   color: #ff9630;
   font-weight: bold;
   font-size: 26rpx;
   margin-top: 8rpx;
+  
 }
 
 .row .text{
@@ -26,6 +30,7 @@
   height: auto;
   font-size: 36rpx;
   color: #666;
+  margin: 5rpx;
 }
 .bottom{
   width: 100%;

@@ -2,9 +2,9 @@
   <view class='title'>
     <input name="title" placeholder-class="placeholder" placeholder="输入计划标题" />
   </view>
-  <view>
-    <image class="card-avatar" src="/images/you.jpg"></image>
-    <text class="card-name">用户名：哈喽</text>
+  <view class="card">
+    <image class="card-avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text class="card-name">用户名：{{userInfo.nickName}}</text>
   </view>
   <text style="font-size:26rpx;color:#8999a5">创建时间：2019-08-01</text>
   <view>
