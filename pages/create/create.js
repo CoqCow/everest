@@ -25,6 +25,18 @@ Page({
     isNew: false,
     focus: true*/
   },
+  changeDate(e) {
+    this.setData({ date: e.detail.value });
+  },
+  changeTime(e) {
+    this.setData({ time: e.detail.value });
+  },
+  changeDateTime(e) {
+    this.setData({ dateTime: e.detail.value });
+  },
+  changeDateTime1(e) {
+    this.setData({ dateTime1: e.detail.value });
+  },
   changeDateTimeColumn(e) {
     var arr = this.data.dateTime, dateArr = this.data.dateTimeArray;
     arr[e.detail.column] = e.detail.value;
@@ -98,48 +110,80 @@ Page({
       hasUserInfo: true
     })
   },
+  onSubmit:function(e){
+    console.log(e.detail.value);
+    if (e.detail.value.title.length == 0 || e.detail.value.title.length >= 20) {
+      wx.showToast({
+        title: '标题不能为空或过长!',
+        duration: 1500
+      })
+      setTimeout(function () {
+        wx.hideToast()
+      }, 2000)
+    }
+    else if (e.detail.value.content.length == 0) {
+      wx.showToast({
+        title: '内容不能为空!',
+        duration: 1500
+      })
+      setTimeout(function () {
+        wx.hideToast()
+      }, 2000)
+    }
+    else {
+      wx.request({
+        url: reqfile,
+        header: {
+          'content-type': 'application/json'
+        },
+        method: "POST",
+        data: { title: e.detail.value.title, content: e.detail.value.content},
+        success: function (res) {
+          console.log("good");
+          if (res.data.status == 0) {
+            wx.showToast({
+              title: '提交失败！！！',
+              
+              duration: 1500
+            })
+          } else {
+            wx.showToast({
+              title: '提交成功！！！',//这里打印出登录成功
+              
+              duration: 1000
+            })
+          }
+        }
+      })
+    }
+
+  }
   /**
    * 页面渲染事件
    */
-  onShow: function () {
-    var item = this.data.item;
-    item.key = app.globalData.hotapp.genPrimaryKey('item');
+  /*onShow: function () {
+    var item = this.data;
     this.setData({
       item: item
     });
-  },
-  changeDate(e) {
-    this.setData({ date: e.detail.value });
-  },
-  changeTime(e) {
-    this.setData({ time: e.detail.value });
-  },
-  changeDateTime(e) {
-    this.setData({ dateTime: e.detail.value });
-  },
-  changeDateTime1(e) {
-    this.setData({ dateTime1: e.detail.value });
-    
-    
-  },
-
+  },*/
   /**
    * 保存数据事件
    */
-  onSubmit: function (event) {
+  /*onSubmit: function (event) {
     console.log(event)
-    var item = this.data.item;
+    var item = this.data;
     item.value.title = event.detail.value.title;
     item.value.content = event.detail.value.content;
     this.setData({
       item: item
     });
     this.saveData();
-  },
+  },*/
   /**
    * 请求服务器保存数据
    */
-  saveData: function () {
+  /*saveData: function () {
     var item = this.data.item;
     var now = Date.parse(new Date()) / 1000;
     item.update_time = now;
@@ -161,5 +205,5 @@ Page({
         });
       }
     });
-  }
+  }*/
 });
