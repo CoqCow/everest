@@ -1,6 +1,6 @@
 <form bindsubmit="onSubmit" bindreset="">
   <view class='title'>
-    <input name="title" placeholder-class="placeholder" placeholder="输入计划标题" />
+    <input name="title" placeholder-class="placeholder" placeholder="输入计划标题" value="{{item.value.title}}"/>
   </view>
   <view class="card">
     <image class="card-avatar" src="{{userInfo.avatarUrl}}"></image>
@@ -14,9 +14,14 @@
     <text>计划允许可见：</text>
     <switch checked></switch>
   </view>
-  <picker mode="date" value="{{date}}" start="2019-08-01" end="2020-09-01" bindchange="bindDateChange">
-    <view class="picker">
-      预计完成时间: {{date}}
+  <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+    <view>
+      计划开始时间: {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}
+    </view>
+  </picker>
+  <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+    <view class="tui-picker-detail">
+      计划结束时间: {{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}
     </view>
   </picker>
   <view class='bottom'>
