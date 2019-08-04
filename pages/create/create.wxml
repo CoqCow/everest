@@ -2,7 +2,7 @@
   <view class='title'>
     <input name="title" placeholder-class="placeholder" placeholder="输入计划标题" value="{{item.value.title}}"/>
   </view>
-  <view class="card">
+  <view>
     <image class="card-avatar" src="{{userInfo.avatarUrl}}"></image>
     <text class="card-name">用户名：{{userInfo.nickName}}</text>
   </view>

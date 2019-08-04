@@ -1,9 +1,9 @@
-var app = getApp();
+const app = getApp();
 var dateTimePicker = require('../../utils/dateTimePicker.js');
 var util=require("../../utils/util.js")
 Page({
   data: {
-    userInfo: {},
+    userInfo: null,
     date: '2018-10-01',
     time: '12:00',
     dateTimeArray: null,
@@ -132,7 +132,7 @@ Page({
     }
     else {
       wx.request({
-        url: `${this.globalReqUrl}/user/green/getUserInfo`,
+        url: `http://127.0.0.1:1818/user/green/getUserInfo`,
         header: {
           'content-type': 'application/json'
         },

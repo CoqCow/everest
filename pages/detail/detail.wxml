@@ -1,7 +1,8 @@
 <view>
   <view class="top-container flex-row">
     <view><text class="topic">计划标题</text></view>
-    <image class="card-avatar" src="/images/you.jpg"></image>                 <text class="card-name">哈喽</text>
+    <image class="card-avatar" src="{{userInfo.avartarUrl}}"></image>                 
+    <text class="card-name">{{userInfo.nickName}}</text>
     <button size="mini" type="primary">完成状态按钮</button>
     <view>
       <text class="card-time">发布时间：2019-07-30</text>
