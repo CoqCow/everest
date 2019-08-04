@@ -10,7 +10,7 @@ Page({
     })
   },
   data: {
-    userInfo: {},
+    userInfo: null,
     banner: null,
     autoplay: true,
     interval: 2000,

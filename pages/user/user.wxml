@@ -3,8 +3,8 @@
             <view></view>
             <view class="g-bda">
                 <view bindtap="" class="g-bda-userinfo">
-                    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
-                    <text class="userinfo-nickname">用户名：{{userInfo.nickName}}</text>
+                      <image class="card-avatar" src="{{userInfo.avartarUrl}}"></image>
+                      <view class="card-name">{{userInfo.nickName}}</view> 
                 </view>
             </view>
         </view>

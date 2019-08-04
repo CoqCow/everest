@@ -1,9 +1,9 @@
 //logs.js
 const util = require('../../utils/util.js')
-
+const app = getApp();
 Page({
   data: {
-    logs: []
+    userInfo:null
   },
   details2:function(){
     wx.navigateTo({
@@ -12,9 +12,7 @@ Page({
   },
   onLoad: function () {
     this.setData({
-      logs: (wx.getStorageSync('logs') || []).map(log => {
-        return util.formatTime(new Date(log))
-      })
+      userInfo:app.globalData.userInfo
     })
   }
 })

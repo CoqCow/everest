@@ -11,8 +11,8 @@ App({
        success: res => {
          this.getUserInfo(res.code);
       }
-    }),
-    wx.getSetting({
+    })
+   /* wx.getSetting({
         success: res => {
           if (res.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
@@ -29,40 +29,37 @@ App({
             })
           }
         }
-    })
+    })*/
   },
   getUserInfo: function (code) {
     let that = this
     let paramdata = {
       code: code,
-      token: that.token
+      token: wx.getStorageSync('token')
     }
     console.log(paramdata);
     return utils.requestApi(`${this.globalReqUrl}/user/green/getUserInfo`, paramdata).then(
       res => {
-        //-----------这里是登录成功 要跳转到/pages/square/square页面-----------
-          console.log("res:"+res.code);
-         // that.userInfo = res.data.user;
-          //that.token = res.data.token;
-        // 获取用户信息
-      
-        wx.redirectTo({
-            url: '/pages/square/square'
-          }),
-          console.log("success");
-       // wx.setStorageSync('globaluserInfo', res.data)
-       // console.log(res, that, '用户接口请求')
+        console.log("res:"+res.code);
+        this.globalData.userInfo = res.data.user;
+        this.globalData.token = res.data.token
+        wx.setStorageSync('token', res.data.token)
+       // console.log('缓存数据', wx.getStorageSync('token'))
+
+        if (this.userInfoReadyCallback) {
+          this.userInfoReadyCallback(this.globalData.userInfo)
+        }
         return res.data
       },
       err => {
         console.log('error', err)
         if (1000 == err.code){
-          //-----------这里是没有注册 要跳转到/pages/index/index页面-----------
-          console.log("没有注册");
+          that.userInfo = null
+          that.token = err.msg
+          wx.setStorageSync('token', err.msg)
         }else if (1001 == err.code) {
           console.log("code过期");
         }
-       // wx.removeStorageSync('globaluserInfo')
         return err
       }
     )

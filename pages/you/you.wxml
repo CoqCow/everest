@@ -1,8 +1,8 @@
 <scroll-view scroll-y="true" bindscrolltolower="scrollToLower" class="timeline">
   <view class="square-container" >
     <view class="top-container flex-row">
-      <image class="card-avatar" src="/images/you.jpg"></image>
-      <text class="card-name">哈喽</text>               
+      <image class="card-avatar" src="{{userInfo.avartarUrl}}"></image>
+       <view class="card-name">{{userInfo.nickName}}</view> 
       <view class="date-container">
         <text class="card-time">2019-07-30</text>
       </view>
