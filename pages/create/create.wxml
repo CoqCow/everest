@@ -1,31 +1,29 @@
 <form bindsubmit="onSubmit" bindreset="">
   <view class='title'>
-    <input name="title" placeholder-class="placeholder" placeholder="输入计划标题" value="{{item.value.title}}"/>
+    <input name="title" placeholder-class="placeholder" placeholder="输入计划标题" value="{{item.value.title}}" />
   </view>
   <view>
-    <image class="card-avatar" src="{{userInfo.avatarUrl}}"></image>
-    <text class="card-name">用户名：{{userInfo.nickName}}</text>
+    <image class="card-avatar" src="{{userInfo.avartarUrl}}"></image>
+    <text class="card-name">用户名:{{userInfo.nickName}}</text>
   </view>
-  <text style="font-size:26rpx;color:#8999a5">创建时间：{{TIME}}</text>
+
   <view>
-    <textarea class='text' placeholder-class="placeholder"  name="content" focus="{{focus}}" value="{{item.value.content}}" placeholder="点击添加文本" />
+    <textarea class='text' placeholder-class="placeholder" name="content" focus="{{focus}}" value="{{item.value.content}}" placeholder="点击添加文本" />
   </view>
   <view>
-    <text>计划允许可见：</text>
-    <switch checked></switch>
+    <text >计划允许可见</text>
+    <switch checked bindchange="switchChange"></switch>
   </view>
-  <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
-    <view>
-      计划开始时间: {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}
-    </view>
-  </picker>
-  <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
-    <view class="tui-picker-detail">
-      计划结束时间: {{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}
-    </view>
-  </picker>
+  <view>
+    <text>计划开始时间:{{beginTimeForShow}}</text>
+    <van-datetime-picker type="datetime" value="{{ beginTime }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="beginTimeInput" />
+  </view>
+  <view>
+    <text>预计完成时间：{{ endTimeForShow }}</text>
+    <van-datetime-picker type="datetime" value="{{ endTime }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="endTimeInput" />
+  </view>
   <view class='bottom'>
-      <button formType="submit" class='btn success'>发布</button>
-      <button form-type="detele" class='btn del'>返回</button>
-    </view>
+    <button formType="submit" class='btn success'>发布</button>
+    <button form-type="reset" class='btn del' bindtap="return">返回</button>
+  </view>
 </form>
