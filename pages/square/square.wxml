@@ -7,7 +7,7 @@
           <van-tag round>未开始</van-tag>
         </view>
         <view wx:elif="{{item.status==3}}">
-        <van-tag mark type="success">进行中</van-tag>
+          <van-tag mark type="success">进行中</van-tag>
         </view>
         <view wx:elif="{{item.status==4}}">
           <van-tag round type="success">已完成</van-tag>
@@ -26,7 +26,9 @@
       <view class="bottom-container">
         <view class="bottom-tool ">
           <text class="bottom-tool-text">围观：0 </text>
-          <text class="bottom-tool-text">点赞：0 </text>
+          <view wx:if="{{item.status==4}}">
+            <text class="bottom-tool-text">点赞：0 </text>
+          </view>
         </view>
       </view>
     </view>
