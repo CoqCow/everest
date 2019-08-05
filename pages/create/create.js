@@ -6,7 +6,7 @@ Page({
   data: {
     userInfo: null,
     token: null,
-    type: null,
+    type: 2,
     status: null,
     minDate: new Date().getTime(),
     maxDate: new Date(2019, 11, 1).getTime(),

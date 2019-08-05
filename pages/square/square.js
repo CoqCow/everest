@@ -1,13 +1,15 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var util = require("../../utils/util.js")
 Page({
   data: {
-    userInfo: null,
+    token: null,
+    total: null,
+    planList: null,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  details:function(){
+  details: function() {
     wx.navigateTo({
       url: '/pages/detail/detail',
     })
@@ -18,40 +20,33 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  onLoad: function() {
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+      token: wx.getStorageSync("token")
+    });
+    
+  },
+  onShow:function(){
+    this.getPlanListInfo();
+  },
+  getPlanListInfo: function (){
+    let paramdata = {
+      token: this.data.token,
+      type: 2
+    }
+    return util.requestApi(`${app.globalReqUrl}/plan/apple/listPlan`, paramdata).then(
+      res => {
+        this.setData({
+          total: res.data.total,
+          planList: res.data.list
+        });
+        console.log(this.data.total)
+        return res.data;
+      },
+      err => {
+        console.log('error', err)
+        return err
+      }
+    )
   }
 })
