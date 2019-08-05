@@ -17,7 +17,7 @@
     <view class="list">
       <view class="items">
         <image src="../../images/user-wait.png"></image>
-        <text>待发布</text>
+        <text>未开始</text>
       </view>
       <view class="items">
         <image src="../../images/user-going.png"></image>

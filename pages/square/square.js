@@ -32,7 +32,8 @@ Page({
   getPlanListInfo: function (){
     let paramdata = {
       token: this.data.token,
-      type: 2
+      type: 2,
+      status:[2,3,4,5]
     }
     return util.requestApi(`${app.globalReqUrl}/plan/apple/listPlan`, paramdata).then(
       res => {
