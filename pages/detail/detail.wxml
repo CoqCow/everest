@@ -1,21 +1,40 @@
 <view>
   <view class="top-container flex-row">
-    <view><text class="topic">计划标题</text></view>
-    <image class="card-avatar" src="{{userInfo.avartarUrl}}"></image>                 
-    <text class="card-name">{{userInfo.nickName}}</text>
-    <button size="mini" type="primary">完成状态按钮</button>
     <view>
-      <text class="card-time">发布时间：2019-07-30</text>
+      <text class="topic">{{planInfo.title}}</text>
     </view>
+    <image class="card-avatar" src="{{planInfo.avartarUrl}}"></image>
+    <text class="card-name">{{planInfo.nickName}}</text>
+    <view wx:if="{{planInfo.status==2}}">
+      <van-tag round>未开始</van-tag>
+    </view>
+    <view wx:elif="{{planInfo.status==3}}">
+      <van-tag mark type="success">进行中</van-tag>
+    </view>
+    <view wx:elif="{{planInfo.status==4}}">
+      <van-tag round type="success">已完成</van-tag>
+    </view>
+    <view wx:elif="{{planInfo.status==5}}" >
+      <van-tag round type="danger">未完成</van-tag>
+    </view>
+    <view wx:if="{{planInfo.tag&&planInfo.status==3}}">
+      <van-button round type="danger" size="small">done it</van-button>
+    </view>
+    <view class="date-container">
+      <text class="card-time">计划标题：{{planInfo.title}}</text>
+    </view>
+
   </view>
-  <view class="plan-intro" >
-    <view class="intro-header"><text>计划详情：</text></view>
-    <text class="intro-content">的呢副本里覅放任不管工会任务呢人部分不容易我发单号为广东部分人认可u发表v日服改变突然被</text>
+  <view class="plan-intro">
+    <view class="intro-header">
+      <text>计划详情：</text>
+    </view>
+    <text class="intro-content">{{planInfo.content}}</text>
   </view>
   <view class="plan-meta">
     <view class="meta-info">
       <text class="user-image">围观人头像</text>
-      <text class="other-meta">已有11人围观</text>
+      <text class="other-meta">已有0人围观</text>
     </view>
     <view class="range">
       <text class="score">围观</text>
@@ -24,12 +43,10 @@
   <view class="plan-meta">
     <view class="meta-info">
       <text class="user-image">点赞人头像</text>
-      <text class="other-meta">已有11人点赞</text>
+      <text class="other-meta">已有0人点赞</text>
     </view>
     <view class="range">
       <text class="score">👍</text>
     </view>
   </view>
-  <button>return</button>
 </view>
-

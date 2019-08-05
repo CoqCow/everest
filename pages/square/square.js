@@ -49,5 +49,11 @@ Page({
         return err
       }
     )
+  },
+  clickPlan:function(e){
+    wx.navigateTo({
+      url: '/pages/detail/detail?pid=' + e.currentTarget.dataset.pid,
+    })
   }
+    
 })

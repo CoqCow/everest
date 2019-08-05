@@ -20,8 +20,6 @@ Page({
       beginTime: event.detail,
       beginTimeForShow: util.formatTimeTwo(event.detail, "Y-M-D h:m:s"),
     });
-    console.log("currentDate:", this.data.beginTime)
-    console.log("max:", this.data.maxDate)
   },
   endTimeInput(event) {
     this.setData({

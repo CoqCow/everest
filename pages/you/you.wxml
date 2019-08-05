@@ -1,21 +1,9 @@
 <scroll-view scroll-y="true" bindscrolltolower="scrollToLower" class="timeline">
+   <van-notice-bar
+  left-icon="https://b.yzcdn.cn/vant/icon-demo-1126.png"
+  text="《------页面开发中-----》YOU计划是计划制订、分享及挑战平台,YOU,是年轻(Young)的你,是杰出(Outstanding)的你,更是独一无二(Unique)的你,我们坚信:You are You等生！YOU 秀!"
+/>
   <view class="square-container" >
-    <view class="top-container flex-row">
-      <image class="card-avatar" src="{{userInfo.avartarUrl}}"></image>
-       <view class="card-name">{{userInfo.nickName}}</view> 
-      <view class="date-container">
-        <text class="card-time">2019-07-30</text>
-      </view>
-    </view>
-    <view class="middle-container flex-column">
-      <text class="message-text" bindtap="details" bindtap="details2">每日计划，每周计划，每月计划，督促自己按时完成计划。</text>
-    </view>
-    <view class="bottom-container">
-      <view class="bottom-tool ">
-        <text class="bottom-tool-text">围观：20 </text>
-        <text class="bottom-tool-text">点赞：14 </text>
-        <text class="bottom-tool-text">挑战：14 </text>
-      </view>
-    </view>
+
   </view>
 </scroll-view>
