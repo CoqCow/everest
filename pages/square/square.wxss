@@ -17,21 +17,27 @@
   flex-direction: column;
 }
 .card-avatar {
-  width: 80rpx;
-  height: 80rpx;
+  width: 40rpx;
+  height: 40rpx;
   border-radius:100%;
   margin-right: 12rpx
 }
-.card-time {
-  font-size: 26rpx;
-  color: #8999a5;
+.card-title {
+  font-size: 40rpx;
   margin-top: 8rpx;
+  font-family: 华文新魏;
+}
+.card-time {
+  font-size: 22rpx;
+  margin-top: 8rpx;
+  color: #9c9191;
+  margin-right: 180rpx;
 }
 .card-name {
-  color: #ff9630;
+  color: #00bfff;
   font-weight: bold;
-  font-size: 32rpx;
-  margin-top: 8rpx;
+  font-size: 25rpx;
+  margin: 8rpx;
 }
 .middle-container {
   padding: 20rpx;

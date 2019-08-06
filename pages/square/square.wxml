@@ -3,23 +3,31 @@
   <view wx:for="{{planList}}">
     <view class="square-container" bindtap="clickPlan" data-pid='{{item.id}}'>
       <view class="top-container flex-row" >
-        <image class="card-avatar" src="{{item.avartarUrl}}"></image>
+        <view class="date-container">
+          <text class="card-title">计划标题：{{item.title}}</text>
+        </view>
+        <view>
+           <image class="card-avatar" src="{{item.avartarUrl}}"></image>
+           <text class="card-name">{{item.nickName}}</text>
+        </view>
         <view wx:if="{{item.status==2}}">
+        <text class="card-time">创建时间:{{item.ctime}}</text>
           <van-tag round>未开始</van-tag>
         </view>
         <view wx:elif="{{item.status==3}}">
+        <text class="card-time">创建时间:{{item.ctime}}</text>
           <van-tag mark type="success">进行中</van-tag>
         </view>
         <view wx:elif="{{item.status==4}}">
+        <text class="card-time">创建时间:{{item.ctime}}</text>
           <van-tag round type="success">已完成</van-tag>
         </view>
         <view wx:elif="{{item.status==5}}">
+        <text class="card-time">创建时间:{{item.ctime}}</text>
           <van-tag round type="danger">未完成</van-tag>
         </view>
-        <view class="card-name">{{item.nickName}}</view>
-        <view class="date-container">
-          <text class="card-time">计划标题：{{item.title}}</text>
-        </view>
+        
+        
       </view>
       <view class="middle-container flex-column">
         <text class="message-text" bindtap="details">{{item.content}}</text>
