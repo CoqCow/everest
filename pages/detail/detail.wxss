@@ -1,13 +1,20 @@
 .top-container {
   padding: 20rpx;
-  border-bottom: 1rpx solid #e1e1e1;
+  background: #f7f5f5;
 }
 .topic{
   font-size: 50rpx;
 }
+.top{
+  display: flex;
+  flex-flow: row;
+}
+.done{
+  margin-left: 300rpx;
+}
 .card-avatar {
-  width: 80rpx;
-  height: 80rpx;
+  width: 40rpx;
+  height: 40rpx;
   border-radius:100%;
   margin-right: 12rpx
 }
@@ -17,16 +24,16 @@
   margin-top: 8rpx;
 }
 .card-name {
-  color: #ff9630;
+  color: #00bfff;
   font-weight: bold;
-  font-size: 32rpx;
+  font-size: 26rpx;
   margin-top: 8rpx;
-  margin-right: 300rpx;
+  margin-right: 100rpx;
 }
 .plan-intro {
   margin-bottom: 40rpx;
   padding: 20rpx;
-  background: #FAFAFA;
+
 }
 .intro-header {
   color: #888;

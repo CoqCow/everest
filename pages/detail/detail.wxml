@@ -3,6 +3,7 @@
     <view>
       <text class="topic">{{planInfo.title}}</text>
     </view>
+    <view class="top">
     <image class="card-avatar" src="{{planInfo.avartarUrl}}"></image>
     <text class="card-name">{{planInfo.nickName}}</text>
     <view wx:if="{{planInfo.status==2}}">
@@ -18,12 +19,9 @@
       <van-tag round type="danger">未完成</van-tag>
     </view>
     <view wx:if="{{planInfo.tag&&planInfo.status==3}}">
-      <van-button round type="danger" size="small">done it</van-button>
+      <van-button round type="danger" size="small" class="done">done it</van-button>
     </view>
-    <view class="date-container">
-      <text class="card-time">计划标题：{{planInfo.title}}</text>
     </view>
-
   </view>
   <view class="plan-intro">
     <view class="intro-header">

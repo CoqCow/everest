@@ -11,36 +11,32 @@
            <text class="card-name">{{item.nickName}}</text>
         </view>
         <view wx:if="{{item.status==2}}">
-        <text class="card-time">创建时间:{{item.ctime}}</text>
+        <text class="card-time">发布于:{{item.ctime}}</text>
           <van-tag round>未开始</van-tag>
         </view>
         <view wx:elif="{{item.status==3}}">
-        <text class="card-time">创建时间:{{item.ctime}}</text>
+        <text class="card-time">发布于:{{item.ctime}}</text>
           <van-tag mark type="success">进行中</van-tag>
         </view>
         <view wx:elif="{{item.status==4}}">
-        <text class="card-time">创建时间:{{item.ctime}}</text>
+        <text class="card-time">发布于:{{item.ctime}}</text>
           <van-tag round type="success">已完成</van-tag>
         </view>
         <view wx:elif="{{item.status==5}}">
-        <text class="card-time">创建时间:{{item.ctime}}</text>
+        <text class="card-time">发布于:{{item.ctime}}</text>
           <van-tag round type="danger">未完成</van-tag>
         </view>
-        
         
       </view>
       <view class="middle-container flex-column">
         <text class="message-text" bindtap="details">{{item.content}}</text>
       </view>
       <view class="bottom-container">
-        <view class="bottom-tool ">
           <text class="bottom-tool-text">围观：0 </text>
           <view wx:if="{{item.status==4}}">
             <text class="bottom-tool-text">点赞：0 </text>
           </view>
-        </view>
       </view>
     </view>
   </view>
-
 </scroll-view>
