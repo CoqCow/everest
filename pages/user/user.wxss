@@ -1,24 +1,15 @@
+.page__hd i-header{
+  background: #f2f2f2;
+}
 .top-container {
   padding: 20rpx;
   border-bottom: 1rpx solid #e1e1e1;
 }
-.card-avatar {
-  width: 80rpx;
-  height: 80rpx;
-  border-radius:100%;
-  margin-right: 12rpx;
-}
-.card-name {
-  color: #ff9630;
-  font-weight: bold;
-  font-size: 32rpx;
-  margin-top: 8rpx;
-}
 .card-add {
-  width: 125rpx;
-  height: 125rpx;
+  width: 100rpx;
+  height: 100rpx;
   border-radius: 8rpx;
-  margin-left: 310rpx
+  margin-left: 320rpx
 }
 .card-time {
   font-size: 26rpx;
@@ -26,8 +17,9 @@
   margin-top: 8rpx;
 }
 .workbench{
-  font-size: 30rpx;
+  border-radius: 5%;
   background: #f2f2f2;
+  font-size: 30rpx;
   padding-bottom: 30rpx;
   margin-bottom:10rpx;
   color: #333;
@@ -76,9 +68,15 @@
 }
 .i-header{
   height: 350rpx;
-   background-color: #3891f8;   
+   background-color: #00bfff;   
    text-align: center;
+   border-bottom-left-radius: 10%;
+   border-bottom-right-radius: 10%;
 }
 .userinfo-nickname{
   color: #fff;
+}
+
+.new{
+  text-align: center;
 }

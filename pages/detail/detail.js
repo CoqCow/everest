@@ -12,7 +12,18 @@ Page({
     planInfo: null,
     token: null
   },
+  //围观
+  guan:function(){
 
+  },
+  //点赞
+  zan:function(){
+
+  },
+  //更多围观用户展示
+  moreguan:function(){
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */

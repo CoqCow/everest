@@ -10,8 +10,10 @@
         </view>
     </view>
 <view>
-  <image class="card-add" src="/images/add.png" bindtap="created"></image>
-      
+  <view>
+   <image  class="card-add" src="/images/add.png" bindtap="created"></image>
+   <view class="new">新建计划</view> 
+  </view>
   <view class="workbench">
     <text class="title">我的计划</text>
     <view class="list">
@@ -34,7 +36,7 @@
     </view>
   </view>
   <view class="workbench">
-    <text class="title">创建计划</text>
+    <text class="title">更多</text>
     <view class="list">
       <view class="items">
         <image src="../../images/user-private.png" ></image>
