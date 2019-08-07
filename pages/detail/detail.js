@@ -10,7 +10,7 @@ Page({
     pid: null,
     userInfo: null,
     planInfo: null,
-    token: wx.getStorageSync("token")
+    token: null
   },
 
   /**
@@ -18,6 +18,7 @@ Page({
    */
   onLoad: function(options) {
     this.setData({
+      token: wx.getStorageSync("token"),
       pid: options.pid,
       userInfo: app.globalData.userInfo,
     })

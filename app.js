@@ -44,7 +44,7 @@ App({
         this.globalData.userInfo = res.data.user;
         this.globalData.token = res.data.token
         wx.setStorageSync('token', res.data.token)
-       // console.log('缓存数据', wx.getStorageSync('token'))
+       //console.log('缓存数据', wx.getStorageSync('token'))
 
         if (this.userInfoReadyCallback) {
           this.userInfoReadyCallback(this.globalData.userInfo)
@@ -68,5 +68,5 @@ App({
     userInfo: null,
     token:null
   },
-  globalReqUrl: 'http://127.0.0.1:1818/superman', //本地
+  globalReqUrl: 'http://39.106.162.237:1818/superman', //本地
 })
