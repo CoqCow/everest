@@ -1,10 +1,12 @@
 .top-container {
   padding: 20rpx;
-  background: #f7f5f5;
+  
 }
 .topic{
-  font-size: 50rpx;
+  font-size: 60rpx;
+  font-family: 华文新魏;
 }
+
 .top{
   display: flex;
   flex-flow: row;
@@ -35,11 +37,6 @@
   padding: 20rpx;
 
 }
-.intro-header {
-  color: #888;
-  font-weight: bold;
-  padding: 15rpx 0;
-}
 .intro-content {
   font-size: 35rpx;
   line-height: 1.5;
@@ -48,7 +45,9 @@
 .plan-meta {
   position: relative;
   padding: 20rpx;
-  overflow: hidden;
+  margin: 20rpx;
+  border-radius: 4rpx;
+  box-shadow: 0 1px 2px #888;
 }
 .plan-meta .range {
   position: absolute;
@@ -61,14 +60,19 @@
   box-shadow: 2px 2px 10px #CCC;
 }
 .plan-meta .meta-info {
-  margin-right: 200rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
 }
 .meta-info text {
   display: block
 }
-.user-image {
-  font-weight: bold;
-  font-size: 40rpx;
+.guan-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius:100%;
+  margin-right: 12rpx
 }
 .other-meta {
   padding-top: 10rpx;
@@ -79,7 +83,31 @@
   display: block;
 }
 .range .score {
-  font-size: 50rpx;
+  font-size: 35rpx;
   font-weight: bold;
 }
-
+.more-user{
+  height: 35rpx;
+  width: 35rpx;
+  padding: 10rpx;
+}
+.have{
+ 
+  display: flex;
+  flex-flow: row;
+}
+.bottom{
+  display: flex;
+  flex-flow: row;
+  padding: 20rpx;
+  justify-content: space-between;
+}
+.bt-look{
+  padding: 10rpx;
+  border-radius: 20rpx;
+  box-shadow: 0px 1px 2px rgb(5, 5, 5);
+}
+.view {
+  width: 40rpx;
+  height: 30rpx;
+}

@@ -4,7 +4,7 @@
     <view class="square-container" bindtap="clickPlan" data-pid='{{item.id}}'>
       <view class="top-container flex-row" >
         <view class="date-container">
-          <text class="card-title">计划标题：{{item.title}}</text>
+          <text class="card-title">{{item.title}}</text>
         </view>
         <view>
            <image class="card-avatar" src="{{item.avartarUrl}}"></image>

@@ -10,7 +10,7 @@
         </view>
     </view>
 <view>
-  <view class="workbench">
+  <view>
    <image  class="card-add" src="/images/add.png" bindtap="created"></image>
    <view class="new">新建计划</view> 
   </view>

@@ -22,29 +22,28 @@
       <van-button round type="danger" size="small" class="done">done it</van-button>
     </view>
     </view>
+    <text class="card-time">发布于:{{planInfo.ctime}}</text>
   </view>
   <view class="plan-intro">
-    <view class="intro-header">
-      <text>计划详情：</text>
-    </view>
     <text class="intro-content">{{planInfo.content}}</text>
   </view>
   <view class="plan-meta">
     <view class="meta-info">
-      <text class="user-image">围观人头像</text>
-      <text class="other-meta">已有0人围观</text>
-    </view>
-    <view class="range">
-      <text class="score">围观</text>
+      <image class="guan-avatar" src="{{planInfo.avartarUrl}}">围观人头像</image>
+      <view class="have">
+      <text class="other-meta">已有1人围观</text>
+      <image src="/images/enter.png" class="more-user" bindtap="moreguan"></image>
+      </view>
     </view>
   </view>
-  <view class="plan-meta">
-    <view class="meta-info">
-      <text class="user-image">点赞人头像</text>
-      <text class="other-meta">已有0人点赞</text>
+  <view class="bottom">
+    <view class="bt-look" bindtap="guan">
+      <image src="/images/icon-views.png" class="view"></image>
+      <text class="other-meta">围观</text>
     </view>
-    <view class="range">
-      <text class="score">👍</text>
+    <view class="bt-look" bindtap="zan">
+      <image src="/images/icon-good.png" class="view"></image>
+      <text class="other-meta">点赞 30</text>
     </view>
   </view>
 </view>
