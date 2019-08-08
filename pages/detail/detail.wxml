@@ -38,12 +38,12 @@
   </view>
   <view class="bottom">
     <view class="bt-look" bindtap="guan">
-      <image src="/images/icon-views.png" class="view"></image>
-      <text class="other-meta">围观</text>
+      <image style="background:url({{url}}) no-repeat" class="view"></image>
+      <text class="{{bg}}">围观</text>
     </view>
     <view class="bt-look" bindtap="zan">
-      <image src="/images/icon-good.png" class="view"></image>
-      <text class="other-meta">点赞 30</text>
+      <image style="background:url({{url0}}) no-repeat" class="view"></image>
+      <text class="{{bg0}}">点赞 30</text>
     </view>
   </view>
 </view>

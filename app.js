@@ -68,5 +68,5 @@ App({
     userInfo: null,
     token:null
   },
-  globalReqUrl: 'http://39.106.162.237:1818/superman', //本地
+  globalReqUrl: 'http://127.0.0.1:1818/superman', //本地
 })

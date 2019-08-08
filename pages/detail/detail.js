@@ -10,15 +10,25 @@ Page({
     pid: null,
     userInfo: null,
     planInfo: null,
-    token: null
+    token: null,
+    bg:"other-meta",
+    bg0: "other-meta",
+    url:"/images/star.png",
+    url0:"/images/icon-good.png"
   },
   //围观
   guan:function(){
-
+    this.setData({
+      bg:"other-meta1",
+      url:"/images/star_active.png"
+    })
   },
   //点赞
   zan:function(){
-
+    this.setData({
+      bg0:"other-meta1",
+      url0:"/images/icon-good-active.png"
+    })
   },
   //更多围观用户展示
   moreguan:function(){
