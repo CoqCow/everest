@@ -13,15 +13,18 @@ Page({
     token: null
   },
   //围观
-  guan:function(){
+  guan: function() {
     let paramdata = {
-      token:this.data.token,
-      planId:this.data.planInfo.id,
-      type:1
+      token: this.data.token,
+      planId: this.data.planInfo.id,
+      type: 1
     }
     console.log(paramdata);
-    return utils.requestApi(`${this.globalReqUrl}/relation/tomatoes/see`, paramdata).then(
+    return util.requestApi(`${app.globalReqUrl}/relation/tomatoes/addRelation`, paramdata).then(
       res => {
+        this.setData({
+          planInfo: res.data
+        });
         return res.data
       },
       err => {
@@ -31,11 +34,28 @@ Page({
     )
   },
   //点赞
-  zan:function(){
-
+  zan: function() {
+    let paramdata = {
+      token: this.data.token,
+      planId: this.data.planInfo.id,
+      type: 2
+    }
+    console.log(paramdata);
+    return util.requestApi(`${app.globalReqUrl}/relation/tomatoes/addRelation`, paramdata).then(
+      res => {
+        this.setData({
+          planInfo: res.data
+        });
+        return res.data
+      },
+      err => {
+        console.log('error', err)
+        return err
+      }
+    )
   },
   //更多围观用户展示
-  moreguan:function(){
+  moreguan: function() {
 
   },
   /**
@@ -45,7 +65,7 @@ Page({
     this.setData({
       token: wx.getStorageSync("token"),
       pid: options.pid,
-      userInfo: app.globalData.userInfo,
+      userInfo: app.globalData.userInfo
     })
     this.getPlanDetail();
   },
@@ -57,9 +77,9 @@ Page({
     }
     return util.requestApi(`${app.globalReqUrl}/plan/apple/detailPlan`, paramdata).then(
       res => {
-        
+
         this.setData({
-          planInfo:res.data
+          planInfo: res.data
         });
         return res.data;
       },

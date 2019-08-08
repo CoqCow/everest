@@ -4,23 +4,23 @@
       <text class="topic">{{planInfo.title}}</text>
     </view>
     <view class="top">
-    <image class="card-avatar" src="{{planInfo.avartarUrl}}"></image>
-    <text class="card-name">{{planInfo.nickName}}</text>
-    <view wx:if="{{planInfo.status==2}}">
-      <van-tag round>未开始</van-tag>
-    </view>
-    <view wx:elif="{{planInfo.status==3}}">
-      <van-tag mark type="success">进行中</van-tag>
-    </view>
-    <view wx:elif="{{planInfo.status==4}}">
-      <van-tag round type="success">已完成</van-tag>
-    </view>
-    <view wx:elif="{{planInfo.status==5}}" >
-      <van-tag round type="danger">未完成</van-tag>
-    </view>
-    <view wx:if="{{planInfo.tag&&planInfo.status==3}}">
-      <van-button round type="danger" size="small" class="done">done it</van-button>
-    </view>
+      <image class="card-avatar" src="{{planInfo.avartarUrl}}"></image>
+      <text class="card-name">{{planInfo.nickName}}</text>
+      <view wx:if="{{planInfo.status==2}}">
+        <van-tag round>未开始</van-tag>
+      </view>
+      <view wx:elif="{{planInfo.status==3}}">
+        <van-tag mark type="success">进行中</van-tag>
+      </view>
+      <view wx:elif="{{planInfo.status==4}}">
+        <van-tag round type="success">已完成</van-tag>
+      </view>
+      <view wx:elif="{{planInfo.status==5}}">
+        <van-tag round type="danger">未完成</van-tag>
+      </view>
+      <view wx:if="{{planInfo.tag&&planInfo.status==3}}">
+        <van-button round type="danger" size="small" class="done">done it</van-button>
+      </view>
     </view>
     <text class="card-time">发布于:{{planInfo.ctime}}</text>
   </view>
@@ -29,21 +29,50 @@
   </view>
   <view class="plan-meta">
     <view class="meta-info">
-      <image class="guan-avatar" src="{{planInfo.avartarUrl}}">围观人头像</image>
+      <view wx:for="{{planInfo.avartarUrls}}">
+        <view wx:if="{{index<5}}">
+        <image class="guan-avatar" src="{{item}}">围观人头像</image>
+        </view>
+      </view>
       <view class="have">
-      <text class="other-meta">已有1人围观</text>
-      <image src="/images/enter.png" class="more-user" bindtap="moreguan"></image>
+        <text class="other-meta">已有{{planInfo.seeNum}}人围观</text>
+        <image src="/images/enter.png" class="more-user" bindtap="moreguan"></image>
       </view>
     </view>
   </view>
+
+
+
   <view class="bottom">
-    <view class="bt-look" bindtap="guan">
-      <image src="/images/icon-views.png" class="view"></image>
-      <text class="other-meta">围观</text>
+    <view wx:if="{{planInfo.seeTag}}">
+      <view class="bt-look">
+        <image style="background:url(/images/icon-views-active.png) no-repeat" class="view"></image>
+        <text class="other-meta1">围观</text>
+      </view>
     </view>
-    <view class="bt-look" bindtap="zan">
-      <image src="/images/icon-good.png" class="view"></image>
-      <text class="other-meta">点赞 30</text>
+    <view wx:elif="{{!planInfo.seeTag}}">
+      <view class="bt-look" bindtap="guan">
+        <image style="background:url(/images/icon-views.png) no-repeat" class="view"></image>
+        <text class="other-meta">围观</text>
+      </view>
     </view>
+
+    <view wx:if="{{planInfo.status==4}}">
+      <view wx:if="{{planInfo.zanTag}}">
+        <view class="bt-look">
+          <image style="background:url(/images/icon-good-active.png) no-repeat" class="view"></image>
+          <text class="other-meta1">点赞{{planInfo.zanNum}}</text>
+        </view>
+      </view>
+      <view wx:elif="{{!planInfo.zanTag}}">
+        <view class="bt-look" bindtap="zan">
+          <image style="background:url(/images/icon-good.png) no-repeat" class="view"></image>
+          <text class="other-meta">点赞{{planInfo.zanNum}}</text>
+        </view>
+      </view>
+    </view>
+
+
+
   </view>
 </view>

@@ -29,7 +29,7 @@
         
       </view>
       <view class="middle-container flex-column">
-        <text class="message-text" bindtap="details">{{item.content}}</text>
+        <text class="message-text" >{{item.content}}</text>
       </view>
       <view class="bottom-container">
           <text class="bottom-tool-text">围观：0 </text>

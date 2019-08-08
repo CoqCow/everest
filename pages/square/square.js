@@ -9,11 +9,6 @@ Page({
     planList: null,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  details: function() {
-    wx.navigateTo({
-      url: '/pages/detail/detail',
-    })
-  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -52,7 +47,7 @@ Page({
   },
   clickPlan:function(e){
     wx.navigateTo({
-      url: '/pages/detail/detail?pid=' + e.currentTarget.dataset.pid,
+      url: '/pages/detail/detail?pid=' + e.currentTarget.dataset.pid
     })
   }
     

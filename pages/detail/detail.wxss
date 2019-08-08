@@ -1,18 +1,13 @@
 .top-container {
   padding: 20rpx;
-  
 }
 .topic{
   font-size: 60rpx;
   font-family: 华文新魏;
 }
-
 .top{
   display: flex;
   flex-flow: row;
-}
-.done{
-  margin-left: 300rpx;
 }
 .card-avatar {
   width: 40rpx;
@@ -32,10 +27,12 @@
   margin-top: 8rpx;
   margin-right: 100rpx;
 }
+.done{
+  margin-left: 300rpx;
+}
 .plan-intro {
   margin-bottom: 40rpx;
   padding: 20rpx;
-
 }
 .intro-content {
   font-size: 35rpx;
@@ -47,19 +44,9 @@
   padding: 20rpx;
   margin: 20rpx;
   border-radius: 4rpx;
-  box-shadow: 0 1px 2px #888;
+  box-shadow: 0 1px 2px #8999a5;
 }
-.plan-meta .range {
-  position: absolute;
-  top: 30rpx;
-  right: 20rpx;
-  width: 180rpx;
-  background: #FFF;
-  padding: 20rpx 10rpx;
-  text-align: center;
-  box-shadow: 2px 2px 10px #CCC;
-}
-.plan-meta .meta-info {
+.meta-info {
   margin-right: 20rpx;
   display: flex;
   flex-flow: row;
@@ -72,29 +59,22 @@
   width: 60rpx;
   height: 60rpx;
   border-radius:100%;
-  margin-right: 12rpx
+  margin-right: 12rpx;
+  border:1px solid #8999a5;
+}
+.have{
+  display: flex;
+  flex-flow: row;
 }
 .other-meta {
   padding-top: 10rpx;
-  color: #888;
+  color: #8999a5;
   font-size: 30rpx;
-}
-.range text {
-  display: block;
-}
-.range .score {
-  font-size: 35rpx;
-  font-weight: bold;
 }
 .more-user{
   height: 35rpx;
   width: 35rpx;
-  padding: 10rpx;
-}
-.have{
- 
-  display: flex;
-  flex-flow: row;
+  padding: 12rpx;
 }
 .bottom{
   display: flex;
@@ -103,11 +83,19 @@
   justify-content: space-between;
 }
 .bt-look{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
   padding: 10rpx;
   border-radius: 20rpx;
-  box-shadow: 0px 1px 2px rgb(5, 5, 5);
+  box-shadow: 2px 2px 2px rgb(5, 5, 5);
 }
 .view {
-  width: 40rpx;
-  height: 30rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.other-meta1{
+  padding-top: 10rpx;
+  color: #03b3ee;
+  font-size: 30rpx;
 }
