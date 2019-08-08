@@ -96,6 +96,6 @@
 }
 .other-meta1{
   padding-top: 10rpx;
-  color: #00bfff;
+  color: #03b3ee;
   font-size: 30rpx;
 }

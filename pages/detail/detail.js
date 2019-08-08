@@ -13,14 +13,14 @@ Page({
     token: null,
     bg:"other-meta",
     bg0: "other-meta",
-    url:"/images/star.png",
+    url:"/images/icon-views.png",
     url0:"/images/icon-good.png"
   },
   //围观
   guan:function(){
     this.setData({
       bg:"other-meta1",
-      url:"/images/star_active.png"
+      url:"/images/icon-views-active.png"
     })
   },
   //点赞
