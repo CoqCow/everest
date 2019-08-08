@@ -14,7 +14,21 @@ Page({
   },
   //围观
   guan:function(){
-
+    let paramdata = {
+      token:this.data.token,
+      planId:this.data.planInfo.id,
+      type:1
+    }
+    console.log(paramdata);
+    return utils.requestApi(`${this.globalReqUrl}/relation/tomatoes/see`, paramdata).then(
+      res => {
+        return res.data
+      },
+      err => {
+        console.log('error', err)
+        return err
+      }
+    )
   },
   //点赞
   zan:function(){
