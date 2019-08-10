@@ -20,3 +20,14 @@
   color: rgb(10, 10, 10);
   font-size: 20rpx;
 }
+.jdc-confirm__dbtnwrap {
+  width: 490rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+.jdc-confirm__radio_open .protocal {
+  color: #f0260e;
+  display: inline;
+}

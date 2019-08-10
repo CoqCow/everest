@@ -19,10 +19,10 @@
         <van-tag round type="danger">未完成</van-tag>
       </view>
       <view wx:if="{{planInfo.tag&&planInfo.status==3}}">
-        <van-button round type="danger" size="small" class="done">done it</van-button>
+        <van-button round type="danger" size="mini" class="done">done it</van-button>
       </view>
     </view>
-    <text class="card-time">发布于:{{planInfo.ctime}}</text>
+    <text class="card-time">发布于:{{planInfo.ctimeForShow}}</text>
   </view>
   <view class="plan-intro">
     <text class="intro-content">{{planInfo.content}}</text>

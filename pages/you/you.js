@@ -1,17 +1,53 @@
-const util = require('../../utils/util.js')
-const app = getApp();
+//index.js
+//获取应用实例
+const app = getApp()
+var util = require("../../utils/util.js")
 Page({
   data: {
-    userInfo:null
+    token: null,
+    total: null,
+    planList: null,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  details2:function(){
+  //事件处理函数
+  bindViewTap: function () {
     wx.navigateTo({
-      url: '/pages/detail/detail',
+      url: '../logs/logs'
     })
   },
   onLoad: function () {
     this.setData({
-      userInfo:app.globalData.userInfo
+      token: wx.getStorageSync("token")
+    });
+
+  },
+  onShow: function () {
+    this.getPlanListInfo();
+  },
+  getPlanListInfo: function () {
+    let paramdata = {
+      token: this.data.token,
+      type: 2,
+      status: [4]
+    }
+    return util.requestApi(`${app.globalReqUrl}/plan/apple/listPlan`, paramdata).then(
+      res => {
+        this.setData({
+          total: res.data.total,
+          planList: res.data.list
+        });
+        return res.data;
+      },
+      err => {
+        console.log('error', err)
+        return err
+      }
+    )
+  },
+  clickPlan: function (e) {
+    wx.navigateTo({
+      url: '/pages/detail/detail?pid=' + e.currentTarget.dataset.pid
     })
   }
+
 })

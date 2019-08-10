@@ -36,7 +36,6 @@ Page({
           total: res.data.total,
           planList: res.data.list
         });
-        console.log(this.data.total)
         return res.data;
       },
       err => {
