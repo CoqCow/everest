@@ -11,12 +11,3 @@
   margin: 20rpx;
   border-radius: 50%;
 }
-
-.userinfo-nickname {
-  color: rgb(82, 70, 70);
-}
-.tip {
-  margin: 100rpx;
-  color: rgb(10, 10, 10);
-  font-size: 20rpx;
-}

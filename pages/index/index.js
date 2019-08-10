@@ -12,25 +12,24 @@ Page({
       wx.switchTab({
         url: '/pages/square/square'
       })
-    } else if (this.data.canIUse) {
+    }
+    else if (this.data.canIUse) {
       app.userInfoReadyCallback = res => {
         wx.switchTab({
           url: '/pages/square/square'
         })
       }
-    } else {
+    }
+    else {
       // 查看是否授权
       wx.getSetting({
         success: function(res) {
           if (res.authSetting['scope.userInfo']) {
-            wx.getUserInfo({
-
-            });
+            wx.getUserInfo({});
           }
         }
       })
     }
-
   },
   bindGetUserInfo: function(e) {
     if (e.detail.userInfo) {
@@ -64,7 +63,7 @@ Page({
     } else {
       //用户按了拒绝按钮
       wx.showModal({
-        title: '警告',
+        title: '提示',
         content: '您点击了拒绝授权，将无法进入小程序，请授权之后再进入!!!',
         showCancel: false,
         confirmText: '返回授权',

@@ -24,6 +24,7 @@
     </view>
     <text class="card-time">发布于:{{planInfo.ctime}}</text>
   </view>
+
   <view class="plan-intro">
     <text class="intro-content">{{planInfo.content}}</text>
   </view>
@@ -31,7 +32,7 @@
     <view class="meta-info">
       <view wx:for="{{planInfo.avartarUrls}}">
         <view wx:if="{{index<5}}">
-        <image class="guan-avatar" src="{{item}}">围观人头像</image>
+          <image class="guan-avatar" src="{{item}}"></image>
         </view>
       </view>
       <view class="have">
@@ -40,8 +41,6 @@
       </view>
     </view>
   </view>
-
-
 
   <view class="bottom">
     <view wx:if="{{planInfo.seeTag}}">
@@ -71,8 +70,5 @@
         </view>
       </view>
     </view>
-
-
-
   </view>
 </view>
