@@ -10,11 +10,6 @@
 }
 .top-container {
   padding: 10rpx;
- 
-}
-.date-container {
-  display: flex;
-  flex-direction: column;
 }
 .card-avatar {
   width: 40rpx;
@@ -56,10 +51,9 @@
 .bottom-container {
   height: 50rpx;
   background-color: #fafafa;
-   display:flex;
+  display:flex;
   justify-content: space-between;
 }
-
 .bottom-tool-text {
   color: #6D6D78;
   font-size: 26rpx;

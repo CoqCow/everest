@@ -1,26 +1,26 @@
-//index.js
-//获取应用实例
 const app = getApp()
 var util = require("../../utils/util.js")
 Page({
+  /**
+   * 页面的初始数据
+   */
   data: {
     token: null,
     total: null,
     planList: null,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function() {
     this.setData({
       token: wx.getStorageSync("token")
     });
-    
   },
+  /**
+   * 生命周期函数--监听页面显示
+   */
   onShow:function(){
     this.getPlanListInfo();
   },

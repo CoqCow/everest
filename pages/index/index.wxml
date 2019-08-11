@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
+
     <image class="userinfo-avatar" src="/images/logo.png" bindtap="ff"></image>
     <text>YOU计划是计划制订、分享及挑战平台</text>
     <text>YOU，是年轻(Young)的你</text>
@@ -16,8 +17,8 @@
         <navigator url='/pages/proxy/proxy' class="protocal">《加入YOU计划用户协议》</navigator>
       </label>
     </view>
-    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
-      授权登录
+    <button type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      加入YOU计划
     </button>
   </view>
 </view>
