@@ -54,9 +54,42 @@ Page({
       }
     )
   },
+  //挑战
+  challenge: function () {
+    let paramdata = {
+      token: this.data.token,
+      planId: this.data.planInfo.id,
+      type: 3
+    }
+    console.log(paramdata);
+    return util.requestApi(`${app.globalReqUrl}/relation/tomatoes/addRelation`, paramdata).then(
+      res => {
+        this.setData({
+          planInfo: res.data
+        });
+        return res.data
+      },
+      err => {
+        console.log('error', err)
+        return err
+      }
+    )
+  },
   //done it按钮
-  over:function(){
-
+  over:function(e){
+    wx.showModal({
+      title: '提示',
+      content:'您确定已完成该计划了吗？不要欺骗自己吆~',
+      confirmText:"已完成",
+      cancelText:"再努力",
+      success:function(res){
+        if(res.confirm){
+          wx.switchTab({
+            url: '/pages/square/square',
+          })
+        }
+      }
+    })
   },
   //更多围观用户展示
   moreguan: function() {

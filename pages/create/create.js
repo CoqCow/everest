@@ -41,8 +41,6 @@ Page({
     wx.showModal({
       title: '提示',
       content: '您确定要放弃发布了吗？',
-      confirmText: '确定',
-      showCancel: true,
       success: function (res) {
         if (res.confirm) {
           console.log('用户点击了“确定”')

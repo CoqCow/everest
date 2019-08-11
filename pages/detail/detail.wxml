@@ -1,7 +1,15 @@
 <view>
   <view class="top-container flex-row">
-    <view>
+    <view class="tv">
       <text class="topic">{{planInfo.title}}</text>
+      <view wx:if="{{planInfo.status==4&&planInfo.zanNum>=1}}">
+        <view wx:if="{{!planInfo.challengeTag}}" bindtap="challenge">
+          <image class="view0" src="/images/pk.png"></image>
+        </view>
+        <view wx:if="{{planInfo.challengeTag}}">
+          <image class="view0" src="/images/pk-active.png"></image>
+        </view>
+      </view>
     </view>
     <view class="top">
       <image class="card-avatar" src="{{planInfo.avartarUrl}}"></image>

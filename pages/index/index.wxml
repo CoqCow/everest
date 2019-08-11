@@ -12,9 +12,9 @@
     <text>You are You等生！</text>
     <text>You 秀！</text>
     <view class="jdc-confirm__radio_open">
-      <label class="radio">
-        <radio value="1" checked="true" color="#f0260e" /> 同意
-        <navigator url='/pages/proxy/proxy' class="protocal">《加入YOU计划用户协议》</navigator>
+      <label>
+        <radio value="1" checked="true" color="#4599b6" /> 同意
+        <navigator url='/pages/proxy/proxy' class="protocal">《YOU计划用户协议》</navigator>
       </label>
     </view>
     <button type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
