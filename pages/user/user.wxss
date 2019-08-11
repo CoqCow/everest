@@ -1,82 +1,67 @@
-.page__hd i-header{
-  background: #f2f2f2;
-}
-.top-container {
-  padding: 20rpx;
-  border-bottom: 1rpx solid #e1e1e1;
-}
-.card-add {
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 8rpx;
-  margin-left: 320rpx
-}
-.card-time {
-  font-size: 26rpx;
-  color: #8999a5;
-  margin-top: 8rpx;
-}
-.workbench{
-  border-radius: 5%;
-  background: #f2f2f2;
-  font-size: 30rpx;
-  padding-bottom: 30rpx;
-  margin-bottom:10rpx;
-  color: #333;
-  border-bottom: 1rpx solid #e1e1e1;
-}
-.title{
-  font-size:40rpx;
-  padding: 20rpx 20rpx;
-  margin-bottom: 40rpx;
-  display: block;
-}
-.list{
-  display: flex;
-  flex-direction: row;
-  flex:1;
-}
-.items{
-  width: 100rpx;
-  flex:1;
+.header {
+  height: 350rpx;
+  background-color: #00bfff;
   text-align: center;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
 }
-.workbench .items image{
-  width: 100rpx;
-  height: 100rpx;
-}
-.workbench .items text{
-  display: block;
-  text-align: center;
-  margin-top: 10rpx;
-}
-
-.g-bda-userinfo {
+.userinfo {
   padding-top: 50rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .userinfo-avatar {
   width: 180rpx;
   height: 180rpx;
   margin: 20rpx;
-  margin-bottom: 2rpx;
   border-radius: 50%;
   border: 2px solid #fff;
 }
-.i-header{
-  height: 350rpx;
-   background-color: #00bfff;   
-   text-align: center;
-   border-bottom-left-radius: 10%;
-   border-bottom-right-radius: 10%;
-}
-.userinfo-nickname{
+.userinfo-nickname {
   color: #fff;
 }
-
-.new{
+.card-add {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 8rpx;
+  margin-left: 320rpx;
+}
+.new {
   text-align: center;
 }
+.workbench {
+  border-radius: 5%;
+  background: #f2f2f2;
+  font-size: 30rpx;
+  padding-bottom: 30rpx;
+  margin-bottom: 10rpx;
+}
+.title {
+  font-size: 40rpx;
+  padding: 20rpx 20rpx;
+  margin-bottom: 30rpx;
+  display: block;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.items {
+  width: 100rpx;
+  flex: 1;
+  text-align: center;
+}
+.workbench .items image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.workbench .items text {
+  display: block;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+
+
