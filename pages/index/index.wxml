@@ -1,7 +1,8 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <image class="userinfo-avatar" src="/images/logo.png"></image>
+
+    <image class="userinfo-avatar" src="/images/logo.png" bindtap="ff"></image>
     <text>YOU计划是计划制订、分享及挑战平台</text>
     <text>YOU，是年轻(Young)的你</text>
     <text>是杰出(Outstanding)的你</text>
@@ -10,6 +11,12 @@
     <text>我们坚信</text>
     <text>You are You等生！</text>
     <text>You 秀！</text>
+    <view class="jdc-confirm__radio_open">
+      <label class="radio">
+        <radio value="1" checked="true" color="#f0260e" /> 同意
+        <navigator url='/pages/proxy/proxy' class="protocal">《加入YOU计划用户协议》</navigator>
+      </label>
+    </view>
     <button type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
       加入YOU计划
     </button>

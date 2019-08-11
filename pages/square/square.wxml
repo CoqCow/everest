@@ -33,7 +33,7 @@
       </view>
 
       <view class="bottom-container">
-        <text class="bottom-tool-text">围观：{{item.seeNum}}</text>
+        <text class="bottom-tool-text">围观：{{item.seeNum}} </text>
         <view wx:if="{{item.status==4}}">
           <text class="bottom-tool-text">点赞：{{item.zanNum}} </text>
         </view>
