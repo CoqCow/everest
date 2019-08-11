@@ -1,7 +1,5 @@
 const app = getApp();
-let utils = require('../../utils/util');
-var dateTimePicker = require('../../utils/dateTimePicker.js');
-var util = require("../../utils/util.js")
+var util = require("../../utils/util")
 Page({
   data: {
     userInfo: null,
@@ -39,6 +37,22 @@ Page({
       })
     }
   },
+  return: function () {
+    wx.showModal({
+      title: '提示',
+      content: '您确定要放弃发布了吗？',
+      confirmText: '确定',
+      showCancel: true,
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击了“确定”')
+          wx.switchTab({
+            url: '/pages/user/user',
+          })
+        }
+      }
+    })
+  },
   onLoad: function() {
     this.setData({
       userInfo: app.globalData.userInfo,
@@ -51,17 +65,23 @@ Page({
     console.log(e.detail.value);
     if (e.detail.value.title.length == 0 || e.detail.value.title.length > 20) {
       wx.showToast({
-        title: '标题20个字以内哦～',
-        duration: 2000
+        title: '标题20字以内哦',
+        duration: 3000
       })
       return;
     }
     if (e.detail.value.content.length == 0 || e.detail.value.content.length > 200) {
       wx.showToast({
-        title: '内容200个字以内哦～',
-        duration: 1500
+        title: '内容200字以内',
+        duration: 3000
       })
       return;
+    }
+    if(null==e.detail.beginTime||null==e.detail.endTime||e.detail.beginTime<=e.detail.endTime){
+      wx.showToast({
+        title: '起始日期有误！',
+        duration:3000
+      })
     }
     let paramdata = {
       token: this.data.token,

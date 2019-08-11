@@ -10,7 +10,7 @@
   </view>
   <view class="other">
     <text class="other1">计划允许可见</text>
-    <switch checked bindchange="switchChange"></switch>
+    <switch class="switch" checked bindchange="switchChange"></switch>
   </view>
   <view>
     <text class="other1">计划开始时间：{{beginTimeForShow}}</text>

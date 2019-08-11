@@ -52,9 +52,6 @@
   flex-flow: row;
   justify-content: space-between;
 }
-.meta-info text {
-  display: block
-}
 .guan-avatar {
   width: 60rpx;
   height: 60rpx;

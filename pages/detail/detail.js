@@ -54,6 +54,10 @@ Page({
       }
     )
   },
+  //done it按钮
+  over:function(){
+
+  },
   //更多围观用户展示
   moreguan: function() {
 
