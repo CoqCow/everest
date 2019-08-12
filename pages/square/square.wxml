@@ -6,10 +6,13 @@
 
       <view class="top-container flex-row">
         <view wx:if="{{item.type==3}}">
-         <van-notice-bar left-icon="https://b.yzcdn.cn/vant/icon-demo-1126.png" text="{{item.message}}" />
+          <van-notice-bar left-icon="https://b.yzcdn.cn/vant/icon-demo-1126.png" text="{{item.message}}" />
         </view>
-        <view>
+        <view class="title-container">
           <text class="card-title">{{item.title}}</text>
+          <view wx:if="{{item.type==4}}">
+            <van-tag plain type="success">YOU</van-tag>
+          </view>
         </view>
 
         <view>
@@ -32,9 +35,7 @@
           <text class="card-time">发布于:{{item.ctime}}</text>
           <van-tag round type="danger">未完成</van-tag>
         </view>
-        <view wx:if="{{item.type==4}}">
-          <van-tag plain type="danger">YOU</van-tag>
-        </view>
+
       </view>
 
       <view class="middle-container flex-column">

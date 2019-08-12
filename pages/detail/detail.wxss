@@ -3,15 +3,11 @@
 }
 .tv{
   display: flex;
-  justify-content: space-between
+  flex-flow: row;
 }
 .topic{
   font-size: 60rpx;
   font-family: 华文新魏;
-}
-.view0{
-  width: 80rpx;
-  height: 80rpx;
 }
 .top{
   display: flex;
@@ -22,6 +18,10 @@
   height: 40rpx;
   border-radius:100%;
   margin-right: 12rpx
+}
+.time-cha{
+  display: flex;
+  justify-content: space-between;
 }
 .card-time {
   font-size: 26rpx;

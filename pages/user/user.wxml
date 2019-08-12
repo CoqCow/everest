@@ -1,7 +1,7 @@
 <view class="header">
   <view class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avartarUrl}}"></image>
-    <view class="userinfo-nickname">用户名：{{userInfo.nickName}}</view>
+    <view class="userinfo-nickname" >用户名：{{userInfo.nickName}}</view>
   </view>
 </view>
 
