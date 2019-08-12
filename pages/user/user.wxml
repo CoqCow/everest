@@ -34,19 +34,19 @@
 <view class="workbench">
   <text class="title">更多</text>
   <view class="list">
-    <view class="items">
+    <view class="items" bindtap="private">
       <image src="../../images/user-private.png"></image>
       <text>私密计划</text>
     </view>
-    <view class="items">
+    <view class="items" bindtap="public">
       <image src="../../images/user-public.png"></image>
       <text>公开计划</text>
     </view>
-    <view class="items">
+    <view class="items" bindtap="upvote">
       <image src="../../images/user-good.png"></image>
       <text>我的点赞</text>
     </view>
-    <view class="items">
+    <view class="items" bindtap="challenge">
       <image src="../../images/user-pk.png"></image>
       <text>我的挑战</text>
     </view>

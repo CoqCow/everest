@@ -35,31 +35,64 @@ Page({
    */
   notbegin: function() {
     wx.navigateTo({
-      url: '/pages/notbegin/notbegin',
+      url: '/pages/personal/personal?status=2'
     })
   },
   /**
    * 进行中
    */
-  ongoing: function () {
+  ongoing: function() {
     wx.navigateTo({
-      url: '/pages/ongoing/ongoing',
+      url: '/pages/personal/personal?status=3'
     })
   },
   /**
    * 已完成
    */
-  complete: function () {
+  complete: function() {
     wx.navigateTo({
-      url: '/pages/doneover/doneover',
+      url: '/pages/personal/personal?status=4'
     })
   },
   /**
    * 未完成
    */
-  fail:function(){
+  fail: function() {
     wx.navigateTo({
-      url: '/pages/donefail/donefail',
+      url: '/pages/personal/personal?status=5'
+    })
+  },
+
+  /**
+   * 私密计划
+   */
+  private: function() {
+    wx.navigateTo({
+      url: '/pages/personal/personal?type=1'
+    })
+  },
+  /**
+   * 公开计划
+   */
+  public: function() {
+    wx.navigateTo({
+      url: '/pages/personal/personal?type=2'
+    })
+  },
+  /**
+   * 我的点赞
+   */
+  upvote: function() {
+    wx.navigateTo({
+      url: '/pages/personal/personal?upvote=1'
+    })
+  },
+  /**
+   * 我的挑战
+   */
+  challenge: function() {
+    wx.navigateTo({
+      url: '/pages/personal/personal?type=3'
     })
   }
 });

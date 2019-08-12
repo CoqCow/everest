@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-tag": "../../dist/tag/",
+    "van-notice-bar": "../../dist/notice-bar/"
+  }
+}

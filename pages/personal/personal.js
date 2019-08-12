@@ -1,4 +1,3 @@
-// pages/notbegin/notbegin.js
 const app = getApp()
 var util = require("../../utils/util.js")
 Page({
@@ -13,23 +12,43 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
+  onLoad: function(options) {
     this.setData({
       token: wx.getStorageSync("token")
     });
+    this.getPlanListInfo(options.status, options.type, options.upvote);
   },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    this.getPlanListInfo();
-  },
-  getPlanListInfo: function () {
-    let paramdata = {
-      token: this.data.token,
-      type: 2,
-      status:[2]
+  onShow: function(options) {},
+  getPlanListInfo: function(status, type, upvote) {
+
+    var paramdata;
+    if (null != status) {
+      paramdata = {
+        token: this.data.token,
+        source: "personal",
+        upvote: upvote,
+        status: [status]
+      }
     }
+    if (null != type) {
+      paramdata = {
+        token: this.data.token,
+        source: "personal",
+        upvote: upvote,
+        types: [type],
+      }
+    }
+    if (null != upvote) {
+      paramdata = {
+        token: this.data.token,
+        source: "personal",
+        upvote: upvote,
+      }
+    }
+    console.log("paramdata", paramdata);
     return util.requestApi(`${app.globalReqUrl}/plan/apple/listPlan`, paramdata).then(
       res => {
         this.setData({
@@ -44,7 +63,7 @@ Page({
       }
     )
   },
-  clickPlan: function (e) {
+  clickPlan: function(e) {
     wx.navigateTo({
       url: '/pages/detail/detail?pid=' + e.currentTarget.dataset.pid
     })
