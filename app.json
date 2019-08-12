@@ -7,7 +7,8 @@
     "pages/user/user",
     "pages/detail/detail",
     "pages/create/create",
-    "pages/notbegin/notbegin"
+    "pages/notbegin/notbegin",
+    "pages/donefail/donefail"
   ],
   "window": {
     "backgroundTextStyle": "light",

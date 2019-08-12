@@ -1,6 +1,6 @@
-<!--pages/notbegin/notbegin.wxml-->
+<!--pages/donefail/donefail.wxml-->
 <view wx:if="{{planList.length==0}}">
-目前没有未开始计划欧
+  太棒了，目前没有未完成计划欧
 </view>
 <scroll-view scroll-y="true" bindscrolltolower="scrollToLower" class="timeline">
   <view wx:for="{{planList}}">
@@ -14,9 +14,9 @@
           <image class="card-avatar" src="{{item.avartarUrl}}"></image>
           <text class="card-name">{{item.nickName}}</text>
         </view>
-        <view wx:if="{{item.status==2}}">
+        <view wx:if="{{item.status==5}}">
           <text class="card-time">发布于:{{item.ctime}}</text>
-          <van-tag round>未开始</van-tag>
+          <van-tag round type="danger">未完成</van-tag>
         </view>
       </view>
 

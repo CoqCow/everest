@@ -34,17 +34,32 @@ Page({
    * 未开始
    */
   notbegin: function() {
-    wx.switchTab({
+    wx.navigateTo({
       url: '/pages/notbegin/notbegin',
     })
   },
   /**
    * 进行中
    */
+  ongoing: function () {
+    wx.navigateTo({
+      url: '/pages/ongoing/ongoing',
+    })
+  },
   /**
    * 已完成
    */
+  complete: function () {
+    wx.navigateTo({
+      url: '/pages/doneover/doneover',
+    })
+  },
   /**
    * 未完成
    */
+  fail:function(){
+    wx.navigateTo({
+      url: '/pages/donefail/donefail',
+    })
+  }
 });
