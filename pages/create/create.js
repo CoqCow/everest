@@ -75,7 +75,7 @@ Page({
       })
       return;
     }
-    if(null==e.detail.beginTime||null==e.detail.endTime||e.detail.beginTime<=e.detail.endTime){
+    if(e.detail.beginTime<=e.detail.endTime){
       wx.showToast({
         title: '起始日期有误！',
         duration:3000
