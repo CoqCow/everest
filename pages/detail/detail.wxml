@@ -44,7 +44,7 @@
   </view>
   <view class="plan-meta">
     <view class="meta-info">
-      <view wx:for="{{planInfo.avartarUrls}}">
+      <view wx:for="{{planInfo.zanAvartarUrls}}">
         <view wx:if="{{index<5}}">
           <image class="guan-avatar" src="{{item}}"></image>
         </view>
@@ -55,7 +55,19 @@
       </view>
     </view>
   </view>
-
+  <view class="plan-meta" wx:if="{{planInfo.youTag}}">
+    <view class="meta-info">
+      <view wx:for="{{planInfo.challengeAvartarUrls}}">
+        <view wx:if="{{index<5}}">
+          <image class="guan-avatar" src="{{item}}"></image>
+        </view>
+      </view>
+      <view class="have">
+        <text class="other-meta">已有{{planInfo.challengeNum}}人挑战</text>
+        <image src="/images/enter.png" class="more-user" bindtap="moreguan"></image>
+      </view>
+    </view>
+  </view>
   <view class="bottom">
     <view wx:if="{{planInfo.seeTag}}">
       <view class="bt-look">
