@@ -56,6 +56,14 @@ Page({
   },
   //挑战
   challenge: function() {
+    if (this.data.planInfo.userId == this.data.userInfo.id) {
+      wx.showToast({
+        title: '不能挑战自己的计划哦～',
+        duration: 3000
+      })
+      return;
+    }
+
     let paramdata = {
       token: this.data.token,
       planId: this.data.planInfo.id,
@@ -77,7 +85,7 @@ Page({
   },
   //done it按钮
   over: function(e) {
-    var that=this;
+    var that = this;
     wx.showModal({
       title: '提示',
       content: '您确定已完成该计划了吗？不要欺骗自己吆~',
@@ -142,7 +150,7 @@ Page({
 
   },
 
-  donePlan: function(){
+  donePlan: function() {
 
   },
   /**

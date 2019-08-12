@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-      "van-tag": "../../dist/tag/",
-      "van-button": "../../dist/button/"
+    "van-tag": "../../dist/tag/",
+    "van-button": "../../dist/button/"
   }
 }
