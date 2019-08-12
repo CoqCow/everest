@@ -2,7 +2,7 @@
   <view class="top-container flex-row">
     <view class="tv">
       <text class="topic">{{planInfo.title}}</text>
-      <view wx:if="{{planInfo.status==4&&planInfo.zanNum>=1}}">
+      <view wx:if="{{planInfo.youTag}}">
         <view wx:if="{{!planInfo.challengeTag}}" bindtap="challenge">
           <image class="view0" src="/images/pk.png"></image>
         </view>

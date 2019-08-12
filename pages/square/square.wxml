@@ -6,6 +6,7 @@
         <view>
           <text class="card-title">{{item.title}}</text>
         </view>
+
         <view>
           <image class="card-avatar" src="{{item.avartarUrl}}"></image>
           <text class="card-name">{{item.nickName}}</text>
@@ -25,6 +26,9 @@
         <view wx:elif="{{item.status==5}}">
           <text class="card-time">发布于:{{item.ctime}}</text>
           <van-tag round type="danger">未完成</van-tag>
+        </view>
+        <view wx:if="{{item.type==4}}">
+          <van-tag plain type="danger">YOU</van-tag>
         </view>
       </view>
 

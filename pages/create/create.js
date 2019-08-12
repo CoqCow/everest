@@ -89,8 +89,7 @@ Page({
       beginTime: this.data.beginTime,
       endTime: this.data.endTime
     }
-    console.log("添加计划:", paramdata)
-    return utils.requestApi(`${app.globalReqUrl}/plan/apple/addPlan`, paramdata).then(
+    return util.requestApi(`${app.globalReqUrl}/plan/apple/addPlan`, paramdata).then(
       res => {
         wx.switchTab({
           url: '/pages/square/square'

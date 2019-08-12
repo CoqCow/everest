@@ -13,7 +13,8 @@
         </view>
         <view wx:if="{{item.status==4}}">
           <text class="card-time">发布于:{{item.ctime}}</text>
-          <van-tag round type="success">已完成</van-tag>
+          <van-tag round type="success">已完成</van-tag>        
+          <van-tag plain type="danger">YOU</van-tag>
         </view>
 
       </view>

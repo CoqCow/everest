@@ -55,7 +55,7 @@ Page({
     )
   },
   //挑战
-  challenge: function () {
+  challenge: function() {
     let paramdata = {
       token: this.data.token,
       planId: this.data.planInfo.id,
@@ -76,17 +76,31 @@ Page({
     )
   },
   //done it按钮
-  over:function(e){
+  over: function(e) {
+    var that=this;
     wx.showModal({
       title: '提示',
-      content:'您确定已完成该计划了吗？不要欺骗自己吆~',
-      confirmText:"已完成",
-      cancelText:"再努力",
-      success:function(res){
-        if(res.confirm){
-          wx.switchTab({
-            url: '/pages/square/square',
-          })
+      content: '您确定已完成该计划了吗？不要欺骗自己吆~',
+      confirmText: "已完成",
+      cancelText: "再努力",
+      success(res) {
+        if (res.confirm) {
+          let paramdata = {
+            token: that.data.token,
+            planId: that.data.planInfo.id,
+          }
+          return util.requestApi(`${app.globalReqUrl}/plan/apple/donePlan`, paramdata).then(
+            res => {
+              that.setData({
+                planInfo: res.data
+              });
+              return res.data;
+            },
+            err => {
+              console.log('error', err)
+              return err;
+            }
+          )
         }
       }
     })
@@ -128,6 +142,9 @@ Page({
 
   },
 
+  donePlan: function(){
+
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
