@@ -13,19 +13,19 @@
 <view class="workbench">
   <text class="title">我的计划</text>
   <view class="list">
-    <view class="items">
+    <view class="items" bindtap="notbegin">
       <image src="../../images/user-wait.png"></image>
       <text>未开始</text>
     </view>
-    <view class="items">
+    <view class="items" bindtap="ongoing">
       <image src="../../images/user-going.png"></image>
       <text>进行中</text>
     </view>
-    <view class="items">
+    <view class="items" bindtap="complete">
       <image src="../../images/user-end.png"></image>
       <text>已完成</text>
     </view>
-    <view class="items">
+    <view class="items" bindtap="fail">
       <image src="../../images/user-fail.png"></image>
       <text>未完成</text>
     </view>
