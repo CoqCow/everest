@@ -1,0 +1,32 @@
+<!--pages/donefail/donefail.wxml-->
+<view wx:if="{{planList.length==0}}">
+  太棒了，目前没有未完成计划欧
+</view>
+<scroll-view scroll-y="true" bindscrolltolower="scrollToLower" class="timeline">
+  <view wx:for="{{planList}}">
+    <view class="square-container" bindtap="clickPlan" data-pid='{{item.id}}'>
+
+      <view class="top-container flex-row">
+        <view>
+          <text class="card-title">{{item.title}}</text>
+        </view>
+        <view>
+          <image class="card-avatar" src="{{item.avartarUrl}}"></image>
+          <text class="card-name">{{item.nickName}}</text>
+        </view>
+        <view wx:if="{{item.status==5}}">
+          <text class="card-time">发布于:{{item.ctime}}</text>
+          <van-tag round type="danger">未完成</van-tag>
+        </view>
+      </view>
+
+      <view class="middle-container flex-column">
+        <text class="message-text">{{item.content}}</text>
+      </view>
+
+      <view class="bottom-container">
+        <text class="bottom-tool-text">围观：{{item.seeNum}} </text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

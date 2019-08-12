@@ -9,11 +9,14 @@ Page({
    */
   data: {
     userInfo: null,
+    token: null,
+    total: null,
+    planList: null,
   },
   /**
    * 新建计划
    */
-  created: function () {
+  created: function() {
     wx.navigateTo({
       url: '/pages/create/create',
     })
@@ -21,35 +24,42 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-    //获取用户昵称及头像
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } 
-    else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } 
-    else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+  onLoad: function() {
+    this.setData({
+      userInfo: app.globalData.userInfo,
+      token: wx.getStorageSync("token")
+    });
+  },
+  /**
+   * 未开始
+   */
+  notbegin: function() {
+    wx.navigateTo({
+      url: '/pages/notbegin/notbegin',
+    })
+  },
+  /**
+   * 进行中
+   */
+  ongoing: function () {
+    wx.navigateTo({
+      url: '/pages/ongoing/ongoing',
+    })
+  },
+  /**
+   * 已完成
+   */
+  complete: function () {
+    wx.navigateTo({
+      url: '/pages/doneover/doneover',
+    })
+  },
+  /**
+   * 未完成
+   */
+  fail:function(){
+    wx.navigateTo({
+      url: '/pages/donefail/donefail',
+    })
   }
 });
