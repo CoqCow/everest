@@ -4,8 +4,9 @@
   <view wx:for="{{planList}}">
     <view class="square-container" bindtap="clickPlan" data-pid='{{item.id}}'>
       <view class="top-container flex-row">
-        <view class="date-container">
+        <view>
           <text class="card-title">{{item.title}}</text>
+          <van-tag plain type="success">YOU</van-tag>
         </view>
         <view>
           <image class="card-avatar" src="{{item.avartarUrl}}"></image>
@@ -13,8 +14,7 @@
         </view>
         <view wx:if="{{item.status==4}}">
           <text class="card-time">发布于:{{item.ctime}}</text>
-          <van-tag round type="success">已完成</van-tag>        
-          <van-tag plain type="danger">YOU</van-tag>
+          <van-tag round type="success">已完成</van-tag>
         </view>
 
       </view>

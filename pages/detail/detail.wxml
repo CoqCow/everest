@@ -2,13 +2,8 @@
   <view class="top-container flex-row">
     <view class="tv">
       <text class="topic">{{planInfo.title}}</text>
-      <view wx:if="{{planInfo.youTag}}">
-        <view wx:if="{{!planInfo.challengeTag}}" bindtap="challenge">
-          <image class="view0" src="/images/pk.png"></image>
-        </view>
-        <view wx:if="{{planInfo.challengeTag}}">
-          <image class="view0" src="/images/pk-active.png"></image>
-        </view>
+      <view wx:if="{{planInfo.status==4}}">
+        <van-tag plain type="success">YOU</van-tag>
       </view>
     </view>
     <view class="top">
@@ -30,13 +25,24 @@
         <van-button round type="danger" size="small" class="done" bindtap="over">done it</van-button>
       </view>
     </view>
-    <text class="card-time">发布于:{{planInfo.ctimeForShow}}</text>
+    <view class="time-cha">
+      <text class="card-time">发布于:{{planInfo.ctimeForShow}}</text>
+      <view wx:if="{{planInfo.youTag}}">
+        <view wx:if="{{!planInfo.challengeTag}}" bindtap="challenge">
+          <image class="view" src="/images/pk.png"></image>
+        </view>
+        <view wx:if="{{planInfo.challengeTag}}">
+          <image class="view" src="/images/pk-active.png"></image>
+        </view>
+      </view>
+    </view>
+
   </view>
 
   <view class="plan-intro">
     <text class="intro-content">{{planInfo.content}}</text>
   </view>
-  <view class="plan-meta">
+  <view class="plan-meta" wx:if="{{!planInfo.youTag}}">
     <view class="meta-info">
       <view wx:for="{{planInfo.zanAvartarUrls}}">
         <view wx:if="{{index<5}}">
@@ -63,16 +69,32 @@
     </view>
   </view>
   <view class="bottom">
-    <view wx:if="{{planInfo.seeTag}}">
-      <view class="bt-look">
-        <image style="background:url(/images/icon-views-active.png) no-repeat" class="view"></image>
-        <text class="other-meta1">围观</text>
+    <view wx:if="{{!planInfo.challengeTag}}"> 
+      <view wx:if="{{planInfo.seeTag}}">
+        <view class="bt-look">
+          <image style="background:url(/images/icon-views-active.png) no-repeat" class="view"></image>
+          <text class="other-meta1">围观</text>
+        </view>
+      </view>
+      <view wx:elif="{{!planInfo.seeTag}}">
+        <view class="bt-look" bindtap="guan">
+          <image style="background:url(/images/icon-views.png) no-repeat" class="view"></image>
+          <text class="other-meta">围观</text>
+        </view>
       </view>
     </view>
-    <view wx:elif="{{!planInfo.seeTag}}">
-      <view class="bt-look" bindtap="guan">
-        <image style="background:url(/images/icon-views.png) no-repeat" class="view"></image>
-        <text class="other-meta">围观</text>
+    <view wx:if="{{planInfo.challengeTag}}"> 
+      <view wx:if="{{planInfo.seeTag}}">
+        <view class="bt-look">
+          <image style="background:url(/images/icon-views-active.png) no-repeat" class="view"></image>
+          <text class="other-meta1">围观{{planInfo.seeum}}</text>
+        </view>
+      </view>
+      <view wx:elif="{{!planInfo.seeTag}}">
+        <view class="bt-look" bindtap="guan">
+          <image style="background:url(/images/icon-views.png) no-repeat" class="view"></image>
+          <text class="other-meta">围观{{planInfo.seeNum}}</text>
+        </view>
       </view>
     </view>
 
