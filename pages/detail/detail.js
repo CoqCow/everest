@@ -61,20 +61,20 @@ Page({
         title: '不能挑战自己的计划哦～',
         duration: 3000
       })
+
       return;
     }
 
     let paramdata = {
       token: this.data.token,
       planId: this.data.planInfo.id,
-      type: 3
     }
     console.log(paramdata);
-    return util.requestApi(`${app.globalReqUrl}/relation/tomatoes/addRelation`, paramdata).then(
+    return util.requestApi(`${app.globalReqUrl}/plan/apple/challengePlan`, paramdata).then(
       res => {
-        this.setData({
-          planInfo: res.data
-        });
+        wx.switchTab({
+          url: '/pages/square/square'
+        })
         return res.data
       },
       err => {

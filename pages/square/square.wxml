@@ -2,7 +2,12 @@
   <view wx:for="{{planList}}">
     <view class="square-container" bindtap="clickPlan" data-pid='{{item.id}}'>
 
+
+
       <view class="top-container flex-row">
+        <view wx:if="{{item.type==3}}">
+         <van-notice-bar left-icon="https://b.yzcdn.cn/vant/icon-demo-1126.png" text="{{item.message}}" />
+        </view>
         <view>
           <text class="card-title">{{item.title}}</text>
         </view>
