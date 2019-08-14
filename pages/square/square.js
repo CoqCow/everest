@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function(options) {
     this.setData({
-      token: wx.getStorageSync("token")
+      token: app.globalData.token
     });
   },
   /**
@@ -24,7 +24,12 @@ Page({
     this.getPlanListInfo();
   },
   getPlanListInfo: function() {
-
+    if (this.data.token == null) {
+      this.setData({
+        token: wx.getStorageSync('token')
+      });
+    }
+    console.log("广场:",this.data.token)
     let paramdata = {
       token: this.data.token,
       type: [2, 4],

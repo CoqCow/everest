@@ -122,7 +122,7 @@ Page({
    */
   onLoad: function(options) {
     this.setData({
-      token: wx.getStorageSync("token"),
+      token: app.globalData.token,
       pid: options.pid,
       userInfo: app.globalData.userInfo
     })

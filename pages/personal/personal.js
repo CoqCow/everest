@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function(options) {
     this.setData({
-      token: wx.getStorageSync("token")
+      token: app.globalData.token
     });
     this.getPlanListInfo(options.status, options.type, options.upvote);
   },

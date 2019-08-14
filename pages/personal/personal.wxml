@@ -1,53 +1,56 @@
 <scroll-view scroll-y="true" bindscrolltolower="scrollToLower" class="timeline">
-  <view wx:for="{{planList}}">
-    <view class="square-container" bindtap="clickPlan" data-pid='{{item.id}}'>
-
-
-
-      <view class="top-container flex-row">
-        <view wx:if="{{item.type==3}}">
-          <van-notice-bar left-icon="https://b.yzcdn.cn/vant/icon-demo-1126.png" text="{{item.message}}" />
-        </view>
-        <view class="title-container">
-          <text class="card-title">{{item.title}}</text>
-          <view wx:if="{{item.type==4}}">
-            <van-tag plain type="success">YOU</van-tag>
+  <view wx:if="{{total==0}}">
+    <view class="show-empty">空空如也～</view>
+  </view>
+  <view wx:elif="{{total>0}}">
+    <view wx:for="{{planList}}">
+      <view class="square-container" bindtap="clickPlan" data-pid='{{item.id}}'>
+        <view class="top-container flex-row">
+          <view wx:if="{{item.type==3}}">
+            <van-notice-bar left-icon="https://b.yzcdn.cn/vant/icon-demo-1126.png" text="{{item.message}}" />
           </view>
+          <view class="title-container">
+            <text class="card-title">{{item.title}}</text>
+            <view wx:if="{{item.type==4}}">
+              <van-tag plain type="success">YOU</van-tag>
+            </view>
+          </view>
+
+          <view>
+            <image class="card-avatar" src="{{item.avartarUrl}}"></image>
+            <text class="card-name">{{item.nickName}}</text>
+          </view>
+          <view wx:if="{{item.status==2}}">
+            <text class="card-time">发布于:{{item.ctime}}</text>
+            <van-tag round>未开始</van-tag>
+          </view>
+          <view wx:elif="{{item.status==3}}">
+            <text class="card-time">发布于:{{item.ctime}}</text>
+            <van-tag mark type="success">进行中</van-tag>
+          </view>
+          <view wx:elif="{{item.status==4}}">
+            <text class="card-time">发布于:{{item.ctime}}</text>
+            <van-tag round type="success">已完成</van-tag>
+          </view>
+          <view wx:elif="{{item.status==5}}">
+            <text class="card-time">发布于:{{item.ctime}}</text>
+            <van-tag round type="danger">未完成</van-tag>
+          </view>
+
         </view>
 
-        <view>
-          <image class="card-avatar" src="{{item.avartarUrl}}"></image>
-          <text class="card-name">{{item.nickName}}</text>
-        </view>
-        <view wx:if="{{item.status==2}}">
-          <text class="card-time">发布于:{{item.ctime}}</text>
-          <van-tag round>未开始</van-tag>
-        </view>
-        <view wx:elif="{{item.status==3}}">
-          <text class="card-time">发布于:{{item.ctime}}</text>
-          <van-tag mark type="success">进行中</van-tag>
-        </view>
-        <view wx:elif="{{item.status==4}}">
-          <text class="card-time">发布于:{{item.ctime}}</text>
-          <van-tag round type="success">已完成</van-tag>
-        </view>
-        <view wx:elif="{{item.status==5}}">
-          <text class="card-time">发布于:{{item.ctime}}</text>
-          <van-tag round type="danger">未完成</van-tag>
+        <view class="middle-container flex-column">
+          <text class="message-text">{{item.content}}</text>
         </view>
 
-      </view>
-
-      <view class="middle-container flex-column">
-        <text class="message-text">{{item.content}}</text>
-      </view>
-
-      <view class="bottom-container">
-        <text class="bottom-tool-text">围观：{{item.seeNum}} </text>
-        <view wx:if="{{item.status==4}}">
-          <text class="bottom-tool-text">点赞：{{item.zanNum}} </text>
+        <view class="bottom-container">
+          <text class="bottom-tool-text">围观：{{item.seeNum}} </text>
+          <view wx:if="{{item.status==4}}">
+            <text class="bottom-tool-text">点赞：{{item.zanNum}} </text>
+          </view>
         </view>
       </view>
     </view>
   </view>
+
 </scroll-view>
