@@ -1,4 +1,4 @@
-<scroll-view scroll-y="true" bindscrolltolower="scrollToLower" class="timeline">
+<scroll-view scroll-y="true" bindscrolltolower="lower" class="timeline">
   <view wx:for="{{planList}}">
     <view class="square-container" bindtap="clickPlan" data-pid='{{item.id}}'>
 
