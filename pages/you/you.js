@@ -10,13 +10,21 @@ Page({
   },
   onLoad: function () {
     this.setData({
-      token: wx.getStorageSync("token")
+      token: app.globalData.token
     });
   },
   onShow: function () {
+    this.setData({
+      token: app.globalData.token
+    });
     this.getPlanListInfo();
   },
   getPlanListInfo: function () {
+    if (this.data.token==null){
+      this.setData({
+        token: app.globalData.token
+      });
+    }
     let paramdata = {
       token: this.data.token,
       types: [4]

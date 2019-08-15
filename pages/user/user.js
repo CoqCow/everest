@@ -27,7 +27,7 @@ Page({
   onLoad: function() {
     this.setData({
       userInfo: app.globalData.userInfo,
-      token: wx.getStorageSync("token")
+      token: app.globalData.token
     });
   },
   /**

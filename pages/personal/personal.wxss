@@ -63,3 +63,6 @@
   font-size: 26rpx;
   margin: 8rpx
 }
+.show-empty{
+  margin: 350rpx
+}
