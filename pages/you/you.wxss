@@ -26,7 +26,7 @@
   font-size: 22rpx;
   margin-top: 8rpx;
   color: #9c9191;
-  margin-right: 180rpx;
+  margin-right: 200rpx;
 }
 .card-name {
   color: #00bfff;

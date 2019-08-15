@@ -3,7 +3,8 @@
 }
 .tv{
   display: flex;
-  flex-flow: row;
+  flex-direction: row;
+  align-items: center;
 }
 .topic{
   font-size: 60rpx;
@@ -12,6 +13,7 @@
 .top{
   display: flex;
   flex-flow: row;
+  align-items: center
 }
 .card-avatar {
   width: 40rpx;

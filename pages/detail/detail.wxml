@@ -69,30 +69,30 @@
     </view>
   </view>
   <view class="bottom">
-    <view wx:if="{{!planInfo.challengeTag}}"> 
+    <view wx:if="{{!planInfo.youTag}}"> 
       <view wx:if="{{planInfo.seeTag}}">
         <view class="bt-look">
-          <image style="background:url(/images/icon-views-active.png) no-repeat" class="view"></image>
+          <image src="/images/icon-views-active.png" class="view"></image>
           <text class="other-meta1">围观</text>
         </view>
       </view>
       <view wx:elif="{{!planInfo.seeTag}}">
         <view class="bt-look" bindtap="guan">
-          <image style="background:url(/images/icon-views.png) no-repeat" class="view"></image>
+          <image src="/images/icon-views.png" class="view"></image>
           <text class="other-meta">围观</text>
         </view>
       </view>
     </view>
-    <view wx:if="{{planInfo.challengeTag}}"> 
+    <view wx:if="{{planInfo.youTag}}"> 
       <view wx:if="{{planInfo.seeTag}}">
         <view class="bt-look">
-          <image style="background:url(/images/icon-views-active.png) no-repeat" class="view"></image>
-          <text class="other-meta1">围观{{planInfo.seeum}}</text>
+          <image src="/images/icon-views-active.png" class="view"></image>
+          <text class="other-meta1">围观{{planInfo.seeNum}}</text>
         </view>
       </view>
       <view wx:elif="{{!planInfo.seeTag}}">
         <view class="bt-look" bindtap="guan">
-          <image style="background:url(/images/icon-views.png) no-repeat" class="view"></image>
+          <image src="/images/icon-views.png" class="view"></image>
           <text class="other-meta">围观{{planInfo.seeNum}}</text>
         </view>
       </view>
@@ -101,13 +101,13 @@
     <view wx:if="{{planInfo.status==4}}">
       <view wx:if="{{planInfo.zanTag}}">
         <view class="bt-look">
-          <image style="background:url(/images/icon-good-active.png) no-repeat" class="view"></image>
+          <image src="/images/icon-good-active.png" class="view"></image>
           <text class="other-meta1">点赞{{planInfo.zanNum}}</text>
         </view>
       </view>
       <view wx:elif="{{!planInfo.zanTag}}">
         <view class="bt-look" bindtap="zan">
-          <image style="background:url(/images/icon-good.png) no-repeat" class="view"></image>
+          <image src="/images/icon-good.png" class="view"></image>
           <text class="other-meta">点赞{{planInfo.zanNum}}</text>
         </view>
       </view>
