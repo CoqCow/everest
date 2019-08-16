@@ -1,7 +1,4 @@
 
-.timeline{
-  height: 100%
-}
 .square-container {
   background-color: white;
   margin: 20rpx;
@@ -63,4 +60,12 @@
   color: #6D6D78;
   font-size: 26rpx;
   margin: 8rpx
+}
+.loading{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around
+}
+.hover-btn{
+  border-radius: 20%;
 }

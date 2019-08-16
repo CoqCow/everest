@@ -8,6 +8,10 @@ Page({
     token: null,
     total: null,
     planList: null,
+    pageNo: 1,
+    pageSize: 10,
+    noMoreData: false,
+    bloading: true,
   },
   /**
    * 生命周期函数--监听页面加载
@@ -48,6 +52,39 @@ Page({
         return err
       }
     )
+  },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    this.setData({
+      pageNo: 1,
+      planList: [],
+      noMoreData: false,
+      bloading: true
+    })
+    this.getPlanListInfo(1)
+
+    wx.stopPullDownRefresh()
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    // 到页面底部时，请求列表
+    if (!this.data.noMoreData) {
+      this.setData({
+        bloading: true,
+        pageNo: ++this.data.pageNo
+      })
+      wx.showToast({
+        title: '加载中...',
+        icon: 'loading',
+        mask: true
+      })
+      this.getPlanListInfo(this.data.pageNo)
+    }
   },
   clickPlan: function(e) {
     wx.navigateTo({
