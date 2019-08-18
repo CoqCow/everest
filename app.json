@@ -13,7 +13,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#00bfff",
     "navigationBarTitleText": "YOU计划",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#7A7E83",

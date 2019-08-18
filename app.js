@@ -4,7 +4,7 @@ App({
     userInfo: null,
     token: null
   },
-  //globalReqUrl: 'http://127.0.0.1:1818/superman', //本地
+//globalReqUrl: 'http://127.0.0.1:1818/superman', //本地
   globalReqUrl: 'https://www.youshow.xyz:1818/superman', //阿里云
   onLaunch: function() {
     // 登录
