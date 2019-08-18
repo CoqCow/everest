@@ -11,7 +11,6 @@ Page({
     pageNo: 1,
     pageSize: 10,
     noMoreData: false,
-    bloading: true,
   },
   /**
    * 生命周期函数--监听页面加载
@@ -45,6 +44,7 @@ Page({
     }
     return util.requestApi(`${app.globalReqUrl}/plan/apple/listPlan`, paramdata).then(
       res => {
+        
         if (res.data.list.length < that.data.pageSize) {
           this.setData({
             noMoreData: true
@@ -56,8 +56,9 @@ Page({
         }
         this.setData({
           total: res.data.total,
-          planList: this.data.planList.concat(res.data.list)
+          planList: this.data.planList.concat(res.data.list),
         });
+        console.log("plan", res.data.list)
         if (this.data.planList.length >= this.data.total){
           this.setData({
             noMoreData: true
@@ -83,7 +84,6 @@ Page({
       pageNo: 1,
       planList: [],
       noMoreData: false,
-      bloading: true
     })
     this.getPlanListInfo(1)
 
@@ -97,7 +97,6 @@ Page({
     // 到页面底部时，请求列表
     if (!this.data.noMoreData) {
       this.setData({
-        bloading: true,
         pageNo: ++this.data.pageNo
       })
       wx.showToast({
