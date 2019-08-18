@@ -40,7 +40,7 @@ Page({
       pageNo: pageNo || that.data.pageNo,
       pageSize: that.data.pageSize,
       token: this.data.token,
-      type: [2, 4],
+      types: [2, 4],
       status: [2, 3, 4, 5]
     }
     return util.requestApi(`${app.globalReqUrl}/plan/apple/listPlan`, paramdata).then(
@@ -49,7 +49,6 @@ Page({
           this.setData({
             noMoreData: true
           })
-          return
         } else {
           this.setData({
             noMoreData: false
