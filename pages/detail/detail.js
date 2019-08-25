@@ -200,5 +200,11 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  //分享卡片
+  shared:function(){
+    wx.navigateTo({
+      url: '/pages/share/share',
+    })
   }
 })
