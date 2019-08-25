@@ -24,9 +24,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    this.getPlanListInfo(1);
+    this.getPlanListInfo(1,true);
   },
-  getPlanListInfo: function(pageNo) {
+  getPlanListInfo: function(pageNo,override) {
     if (this.data.token == null) {
       this.setData({
         token: wx.getStorageSync('token')
@@ -56,7 +56,7 @@ Page({
         }
         this.setData({
           total: res.data.total,
-          planList: this.data.planList.concat(res.data.list),
+          planList:override?res.data.list: this.data.planList.concat(res.data.list),
         });
         console.log("plan", res.data.list)
         if (this.data.planList.length >= this.data.total){
@@ -80,14 +80,28 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    this.setData({
-      pageNo: 1,
-      planList: [],
-      noMoreData: false,
-    })
-    this.getPlanListInfo(1)
-
-    wx.stopPullDownRefresh()
+    if(this.data.noMoreData){
+      wx.showToast({
+        title: '正在刷新...',
+        icon: 'loading',
+        mask: true
+      })
+      this.getPlanListInfo(1,true).then(()=>{
+        wx.stopPullDownRefresh()
+      })
+      /*this.setData({
+        pageNo: 1,
+        planList: [],
+        noMoreData: false,
+      })
+      this.getPlanListInfo(1)*/
+      
+    }else{
+      wx.showToast({
+        title: '这是最新状态哟',
+        duration: 3000,
+      })
+    }
   },
 
   /**
