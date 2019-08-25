@@ -1,5 +1,5 @@
 <van-notice-bar left-icon="https://b.yzcdn.cn/vant/icon-demo-1126.png" text="YOU计划是计划制订、分享及挑战平台,YOU,是年轻(Young)的你,是杰出(Outstanding)的你,更是独一无二(Unique)的你,我们坚信:You are You等生！YOU 秀!" />
-<scroll-view scroll-y="true" bindscrolltolower="scrollToLower" class="timeline">
+<view class="timeline">
 
   <view wx:for="{{planList}}">
     <view class="square-container" bindtap="clickPlan" data-pid='{{item.id}}'>
@@ -28,4 +28,7 @@
       </view>
     </view>
   </view>
-</scroll-view>
+  <view wx:if="{{noMoreData}}" class="data-end">
+    -----我也是有底线的-----
+  </view>
+</view>
