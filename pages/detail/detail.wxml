@@ -114,4 +114,4 @@
     </view>
   </view>
 </view>
-<button catchtap="shared">邀请好友一起完成计划</button>
+<button open-type="share">邀请好友一起完成计划</button>

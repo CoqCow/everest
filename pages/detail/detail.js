@@ -1,6 +1,7 @@
 // pages/detail/detail.js
 const app = getApp();
 var util = require("../../utils/util.js")
+
 Page({
 
   /**
@@ -164,7 +165,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
   },
 
   /**
@@ -199,12 +199,14 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    if (res.from === 'button') {
+    }
+    return {
+      title: '转发',
+      path: '/pages/detail/detail',
+      success: function (res) {
+        console.log('成功', res)
+      }
+    }
   },
-  //分享卡片
-  shared:function(){
-    wx.navigateTo({
-      url: '/pages/share/share',
-    })
-  }
 })

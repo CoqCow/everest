@@ -7,8 +7,7 @@
     "pages/user/user",
     "pages/detail/detail",
     "pages/create/create",
-    "pages/personal/personal",
-    "pages/share/share"
+    "pages/personal/personal"
   ],
   "window": {
     "backgroundTextStyle": "light",
