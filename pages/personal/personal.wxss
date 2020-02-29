@@ -66,3 +66,19 @@
 .show-empty{
   margin: 350rpx
 }
+.userinfo-avatar {
+  width: 600rpx;
+  height: 800rpx;
+  margin: 20rpx;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jdc-confirm__radio_open .protocal {
+  color: #4599b6;
+  display: inline;
+}

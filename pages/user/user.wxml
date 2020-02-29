@@ -1,7 +1,7 @@
 <view class="header">
   <view class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avartarUrl}}"></image>
-    <view class="userinfo-nickname" >用户名：{{userInfo.nickName}}</view>
+    <view class="userinfo-nickname">用户名：{{userInfo.nickName}}</view>
   </view>
 </view>
 
@@ -34,14 +34,12 @@
 <view class="workbench">
   <text class="title">更多</text>
   <view class="list">
-    <view class="items" bindtap="private">
+  <view class="items" wx:if="{{userInfo.openId=='oan0442M_YiCNRDZr_O7WlSTLGqA'||      userInfo.openId=='oan0441oKW3_G83fh74mGmcXULzk'}}">
+    <view  bindtap="private" >
       <image src="../../images/user-private.png"></image>
       <text>私密计划</text>
     </view>
-    <view class="items" bindtap="public">
-      <image src="../../images/user-public.png"></image>
-      <text>公开计划</text>
-    </view>
+  </view>
     <view class="items" bindtap="upvote">
       <image src="../../images/user-good.png"></image>
       <text>我的点赞</text>

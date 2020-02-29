@@ -26,17 +26,6 @@ Page({
     });
     console.log("currentDate:", util.formatTimeTwo(this.data.endTime, "'Y-M-D h:m:s'"))
   },
-  switchChange: function(e) {
-    if (e.detail.value) {
-      this.setData({
-        type: 2,
-      })
-    } else {
-      this.setData({
-        type: 1,
-      })
-    }
-  },
   return: function () {
     wx.showModal({
       title: '提示',
@@ -75,11 +64,13 @@ Page({
       })
       return;
     }
-    if(e.detail.beginTime<=e.detail.endTime){
+    console.log("wqdqw" + this.data.endTime)
+    if (this.data.beginTime >= this.data.endTime){
       wx.showToast({
-        title: '起始日期有误！',
+        title: '计划开始时间应小于结束时间！',
         duration:3000
       })
+      return;
     }
     let paramdata = {
       token: this.data.token,

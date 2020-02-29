@@ -1,7 +1,19 @@
 <view class="timeline">
   <view wx:if="{{total==0}}">
-    <view class="show-empty">空空如也～</view>
+    <view wx:if="{{type==1}}">
+    <view class="container">
+  <view class="userinfo">
+         <text>今天是我们在一起的第{{day}}天～</text>
+         <image class="userinfo-avatar" src="/images/love.jpeg" bindtap="ff"></image>
+           </view>
+</view>
   </view>
+  <view wx:if="{{type!=1}}">
+   <view class="show-empty">空空如也～</view>
+   </view>
+   
+  </view>
+
   <view wx:elif="{{total>0}}">
     <view wx:for="{{planList}}">
       <view class="square-container" bindtap="clickPlan" data-pid='{{item.id}}'>

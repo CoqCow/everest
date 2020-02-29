@@ -1,9 +1,13 @@
-<!--index.wxml-->
+<!--index.wxml
+    
+     <text>今天是我们在一起的第{{day}}天～</text>
+         <image class="userinfo-avatar" src="/images/l1ove.png" bindtap="ff"></image>
+-->
 <view class="container">
   <view class="userinfo">
 
-    <image class="userinfo-avatar" src="/images/logo.png" bindtap="ff"></image>
-    <text>YOU计划是计划制订、分享及挑战平台</text>
+  
+<text>YOU计划是计划制订、分享及挑战平台</text>
     <text>YOU，是年轻(Young)的你</text>
     <text>是杰出(Outstanding)的你</text>
     <text>更是独一无二(Unique)的你</text>

@@ -5,15 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
+    begin: 1571500800000,
     token: null,
     total: null,
     planList: null,
+    type:null,
+    day: 0,
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    const nowTime = new Date(new Date());
+    var now = nowTime.setHours(0, 0, 0, 0);
     this.setData({
+      day: ((now - this.data.begin) / 86400000) + 1,
       token: app.globalData.token
     });
     this.getPlanListInfo(options.status, options.type, options.upvote);
@@ -34,6 +40,15 @@ Page({
       }
     }
     if (null != type) {
+      if(type==1){
+        this.setData({
+          type: type
+        });
+      }else{
+        this.setData({
+          type: null
+        });
+      }
       paramdata = {
         token: this.data.token,
         source: "personal",
